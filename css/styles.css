@@ -1,1 +1,137 @@
-font-family: 'Nunito', sans-serif;
+:root {
+    --color-blue:#17a2b8;
+    --color-darkblue: #00394f;
+    --color-bluebtn: #138496;
+    --color-darkbluebtn:#001d29;
+    --color-darkgray: #d9dadb;
+    --color-gray:#f8f9fa;
+    --color-white:#fff;
+}
+
+html {
+    font-size:10px;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Nunito', sans-serif;
+}
+.header, .banner {
+    padding: 2rem 6rem;
+}
+.container {
+    padding: 0 40rem;
+}
+/* ---------------------------------HEADER---------------------------- */
+header {
+    display:flex;
+    justify-content: space-between;
+    height: 5rem;
+    box-shadow: 0 0 0.8rem var(--color-darkblue);
+    background-color: var(--color-white);
+    position: sticky;
+    top:0;
+}
+.logo {
+    display:flex;
+    gap:2rem;
+    align-items: center;
+    width: 7rem;
+}
+.logo__image {
+   max-width: 100%;
+}
+.logo__title {
+    color: var(--color-blue);
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+.navbar {
+    display:flex;
+    gap:4rem;
+    align-items: center;
+}
+.navbar__links:active {
+    color: var(--color-blue);
+}
+.navbar__links:hover {
+    color: var(--color-blue);
+}
+.navbar__links {
+    text-decoration: none;
+    color: var(--color-darkblue);
+    font-weight: bold;
+    font-size:1.7rem;
+}
+.navbar__links--left {
+    padding-left: 30rem;
+}
+
+.joinclass__btn {
+    display: inline-block;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.8rem;
+    background-color: var(--color-blue);
+    border-radius: 50rem;
+    width: 12rem;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .joinclass__btn:visited {
+    color: var(--color-white);
+    text-decoration: none;
+} ------------------------------------------A REVOIR*/
+.joinclass__btn:hover {
+    background-color: var(--color-bluebtn);
+}
+/* ------------------------BANNER----------------------------------- */
+.banner {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    height:100%;
+    padding:6rem 6rem 1rem;
+}
+.banner__title {
+    font-weight: bold;
+    font-size:7.5rem;
+    font-family:'Handlee', cursive;
+    padding: 2rem 0;
+    line-height:8.5rem;
+    margin-right:15rem;
+}
+.banner__subtitle {
+    font-family:'Handlee', cursive;
+    font-size: 2.5rem;
+    font-weight:bold;
+}
+
+.banner__description {
+    line-height:2.5rem;
+    width: 87rem;
+}
+.banner__link-moreinfos {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.8rem;
+    background-color: var(--color-darkblue);
+    border-radius: 50rem;
+    width: 15rem;
+    height: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.banner__link-moreinfos:hover {
+    background-color:var(--color-darkbluebtn);
+}
+
+
+.blogarticle__img {
+    width:2rem;
+    height:2rem;
+}
