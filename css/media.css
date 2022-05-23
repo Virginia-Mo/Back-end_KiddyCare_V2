@@ -1,0 +1,148 @@
+
+
+@media screen and (min-width : 770px){
+    .footer__container {
+        display: flex;
+            flex-flow: row wrap;
+    }
+    .footer__container-box {
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .teachers__container{
+        display: flex;
+        flex-wrap: wrap;
+        gap:2rem;
+    }
+    .teachers {
+        width: 48%;
+        box-sizing: border-box;
+    }
+    .school-activities {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:2rem;
+        justify-content: space-between;
+    }
+    .card {
+        width: 45%;
+        box-sizing: border-box;
+        padding: 2rem ;
+    }
+}
+@media screen and (min-width : 1024px) {
+    .banner {
+        display:flex;
+        flex-direction: row;
+    }
+    .banner__part1 {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-right: 5rem;
+    }
+    .banner__image {
+       width:auto;
+    }
+    .banner__title {
+        font-size: 8rem;
+    }
+    .banner__description {
+        margin: 0 auto;
+    }
+    .card {
+        width: 30%;
+        box-sizing: border-box;
+        padding: 2rem 
+    }
+    .school-description {
+            display:flex;
+            flex-direction: row;
+        }
+    .classescontent {
+            width: 30%;
+            box-sizing: border-box;
+        }
+    .classes__container {
+            display:flex;
+            flex-direction: row;
+            gap: 4rem;
+        }
+    .book {
+            display: flex;
+            justify-content: space-between;
+        }
+    .bookaseat {
+            width:60% ;
+        }
+    .formcontainer {
+       width: 35%;
+        }
+    .teachers__container{
+            display: flex;
+            gap:2rem;
+        }
+     .teachers {
+            width: 23%;
+            box-sizing: border-box;
+        }
+    .article__container{
+            display: flex;
+            flex-direction: row;
+            gap:2.5rem;
+            flex-wrap: wrap;
+            justify-content:center;
+        }
+        .blogarticle {
+            width: 30%;
+        }
+    .footer__container {
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 0 5rem;
+            gap: 5rem;;
+        }
+    .logo__title--footer {
+            font-size: 3rem;
+        }
+    .container {
+            padding: 5% 15%;
+         
+         } 
+    .navbar__links--left {
+        padding-left: 30rem;
+    }
+.contact__container {
+    display: flex;
+    gap:5rem
+}
+.contact__formcontainer, .contact__infos {
+    flex: 1;
+}
+.contact__infos {
+    padding: 0;
+}
+}
+@media screen and (min-width : 1140px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5rem;
+        position: sticky;
+        top:0; 
+    }
+}
+@media screen and (max-width : 550px) {
+    .navbar {
+        display:flex;
+        flex-direction: column;
+    }
+    .school-description__image {
+        max-width: 100%;
+    }
+}

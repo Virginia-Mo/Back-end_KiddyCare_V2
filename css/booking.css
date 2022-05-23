@@ -1,0 +1,70 @@
+:root {
+    --color-blue:#17a2b8;
+    --color-darkblue: #00394f;
+    --color-bluebtn: #138496;
+    --color-darkbluebtn:#001d29;
+    --color-darkgray: #d9dadb;
+    --color-gray:#f8f9fa;
+    --color-graytext: #706f6f;
+    --color-grayborder: #dee2e6;
+    --color-white:#ffffff;
+}
+.bookaseat__description {
+    color: var(--color-graytext);
+    line-height:2rem;
+}
+.formcontainer {
+    border-radius: 0.5rem;
+}
+.goals {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    color: var(--color-graytext);
+}
+.bookaseat__goals {
+    padding: 1rem 0;
+}
+.content__subtitle--white {
+    color: var(--color-white);
+    background-color: var(--color-darkblue);
+    text-align: center;
+    margin:3rem 0 0;
+    padding: 2rem 0;
+}
+.bookingform {
+    background-color: var(--color-blue);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap:1.5rem;
+    padding: 4rem 6rem;
+    margin-bottom: 8rem;
+}
+.bookingform__button {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.8rem;
+    background-color: var(--color-darkblue);
+    border-radius: 50rem;
+    width: 100%;
+    height: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.bookingform__input {
+    width: 100%;
+    color: var(--color-graytext);
+    border-radius: 0.5rem;
+    height:4.5rem;
+    border:none;
+    font-size:1.6rem;
+    padding-left: 2rem;
+    font-family: 'Nunito', sans-serif;
+}
+.bookingform__input--select {
+    background-color: var(--color-white);
+    width: 105%;
+}

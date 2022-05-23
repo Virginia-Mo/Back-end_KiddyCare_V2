@@ -11,18 +11,22 @@
 }
 
 .school-activities {
-    display: flex;
+    /* display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
     padding: 10rem 0;
-    gap:2.5rem;
+    gap:2.5rem; */
+display:flex;
+flex-direction: column;
+gap: 2.5rem;
 }
 .card {
-    display:flex;
+ display:flex;
     gap:1rem;
-    width:25%;
+     /*   width:25%; */
     height:auto;
-    padding:3rem;
+    /* padding:3rem; */
+    padding:3.5rem;
     background-color: var(--color-gray);
     border-top: 0.1rem solid var(--color-grayborder);
     box-shadow: 0 0 0.4rem var(--color-grayborder);
@@ -48,6 +52,9 @@
 
 .school-description {
     display: flex;
+    flex-direction: column;   
+    margin: 10rem 0;
+    /* AJOUT FLEX DIRECTION ET MARGIN */
     gap:4rem
 }
 .school-description__image {
@@ -57,7 +64,7 @@
 .content__subtitle {
     text-transform:uppercase;
     color: var(--color-blue);
-    font-size:1.8rem;
+    font-size:1.6rem;
 }
 .content__subtitle:after {
     content:"";
@@ -67,12 +74,26 @@
     vertical-align: middle;
     display: inline-block;
 }
+.content__subtitle--border:before {
+    content:"";
+    width:5rem;
+    margin-right: 1rem;
+    border:0.1rem solid var(--color-blue);
+    vertical-align:middle;
+    display: inline-block;
+}
+.content__subtitle--border {
+    text-align: center;
+}
 .content__title {
     color: var(--color-darkblue);
     font-family:'Handlee', cursive;
     font-size: 4rem;
     font-weight:bold;
     margin: 3rem 0;
+}
+.content__title--center {
+    text-align: center;
 }
 .aboutus {
     padding-top:5rem;
