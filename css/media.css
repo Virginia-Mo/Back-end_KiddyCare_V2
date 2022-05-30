@@ -164,7 +164,35 @@
         box-shadow: 0 0 2.5rem var(--color-graytext);
         background-color: var(--color-white);
     }
+.pageMenuContainer {
+    position: relative;
 }
+   .active .linkcontainer { 
+       position: absolute;
+        top: 20px; 
+        right: -20px; 
+        width: 100px;
+        height: auto;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color-white);
+        padding: 0 0 2rem;
+        margin-top: 1.5rem;
+        animation: slide .4s 0s 1 ease;
+     }
+}
+@keyframes slide {
+    0% {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 @media screen and (min-width : 1140px) {
     .header {
         display: flex;
