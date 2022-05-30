@@ -190,10 +190,15 @@
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
+      transform: translateX(0);
       opacity: 1;
     }
   }
+@media screen and (min-width: 1024px) and  (max-width:1165px) {
+    .banner__image {
+        width: 95%;
+    }
+}
 @media screen and (min-width : 1140px) {
     .header {
         display: flex;
