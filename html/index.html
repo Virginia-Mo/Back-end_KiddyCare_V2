@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/about.css">
@@ -24,13 +24,21 @@
     <header class="header">
         <div class="logo"><img src="../img/people.png" alt="logo" class="logo__image"><span
                 class="logo__title">Kiddycaring</span></div>
+                <div class="toggle">
+                    <i class="fas fa-bars open"></i>
+                    <i class="fas fa-times close"></i>
+                </div>
         <nav class="navbar">
             <a href="index.html" class="navbar__links navbar__links--left ">Home</a>
             <a href="about.html" class="navbar__links">About</a>
             <a href="classes.html" class="navbar__links">Classes</a>
             <a href="teachers.html" class="navbar__links">Teachers</a>
             <a href="gallery.html" class="navbar__links">Gallery</a>
-            <a href="pages.html" class="navbar__links">Pages</a>
+            <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
+                <a href="pages.html" class="navbar__links doubleLink">Our Blog</a>
+                <a href="blogdetail.html" class="navbar__links doubleLink">Blog Detail</a>
+            </div>
+            
             <a href="contact.html" class="navbar__links">Contact</a>
         </nav>
         <a href="" class="joinclass__btn">Join Class</a>
@@ -309,7 +317,7 @@
             <section class="blogcontent">
                 <h3 class="content__subtitle content__subtitle--border">Latest Blog</h3>
                 <h2 class="content__title content__title--size">Latest articles from our blog</h2>
-<div class="article__container">
+            <div class="article__container">
                 <article class="blogarticle">
                     <img src="../img/blog-1.jpg" alt="blog1" class="blogarticle__image">
                     <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
@@ -422,6 +430,7 @@
                     href="https://www.svgrepo.com/" class="copyrights__links">SVG Repo</a> </p>
             </div>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,31 @@
     --color-grayborder: #dee2e6;
     --color-white:#ffffff;
 }
+/* .pageMenuContainer {
+   position:relative;
+}
+.active .navbar__links .doubleLink {
+    transform:translateY(10px); */
+/* }
+.navbar__links .doubleLink {
+    bottom: 0;
+    width: 40%;
+    height: auto;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-white);
+    transform: translateY(-500%);
+    transition: transform 1s;
+    padding:1rem 0 2rem;
+} */
+.doubleLink {
+    display: none;
+}
+.pagespan {
+    display: flex;
+}
 .content__title--size {
     text-align: center;
     font-size: 3.5rem;
@@ -108,4 +133,170 @@ height: 2rem;
     display: flex;
     justify-content: center;
    align-items: center;
+}
+
+/* BLOG DETAIL */
+.left {
+    text-align: left;
+}
+.blogarticle__image--detail1 {
+   border-radius: 1rem;
+   max-width: 100%;
+}
+.blogdetail__container, aside {
+    padding: 2rem 10rem;
+}
+.blogarticle__details-page{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+.blogarticle--page {
+    color: var(--color-graytext);
+}
+.blogarticle__image--detail2 {
+    float: left;
+    width: 50%;
+    border-radius: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+.blogarticle__image--detail3 {
+    float: right;
+    width: 50%;
+    border-radius: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+.blogarticle__description-page {
+    color: var(--color-graytext);
+    line-height: 2.5rem;
+}
+.blogarticle__title-page {
+    font-size:3rem;
+    padding: 2rem 0;
+}
+.comment__userimg {
+    border-radius: 50%;
+    max-width: 100%;
+}
+.div__userimg {
+    width: 35rem;
+    display: inline-block;
+}
+.comment--writer {
+    font-family: 'Handlee', cursive;
+
+}
+.datetime {
+  color: var(--color-darkblue);  
+  font-style: italic;
+  font-family: 'Handlee', cursive;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+}
+.div__usercomment {
+    display: inline-block;
+}
+.comment--detail {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.comment--p {
+    color: var(--color-graytext);
+    padding: 1rem 0;
+    line-height: 2.5rem;
+}
+.comment__btn {
+    border: none;
+    background-color: var(--color-gray);
+    padding: 1rem;
+}
+.comment--detail--reply {
+    margin-left: 10rem;
+}
+.contact__formcontainer {
+    background-color: var(--color-gray);
+    color: var(--color-graytext);
+    padding: 1rem 5rem;
+}
+.contactform__input {
+    width: 90%;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--color-grayborder);
+}
+
+.contact__form--blog {
+    display: flex;
+    flex-direction: column;
+}
+.label {
+    padding: 1rem 0;
+}
+.contact__message {
+    height: 10rem;
+    margin-bottom: 1rem;
+}
+.blog__author {
+    text-align: center;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border-radius: 0.5rem;
+    margin: 5rem 0;
+    padding: 2.5rem;
+}
+.blog__author-img {
+    border-radius: 50%;
+}
+.blog__author--p {
+    line-height: 2.5rem;
+}
+#search {
+    font-size: 1.rem;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    width: 80%;
+    font-size: 1.7rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.search__button {
+    height: 4.7rem;
+    width: 9%;
+    background-color: white;
+    border: 0.1rem solid var(--color-grayborder);
+    border-left: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 2rem;
+    color: var(--color-blue);
+}.search__form {
+    display: flex;
+}
+.categories__links {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--color-blue);
+    border-bottom: 0.1rem solid var(--color-grayborder);
+    padding: 1rem 0;
+    color: var(--color-blue);
+}
+.categories__links:visited {
+    color: var(--color-blue);
+}
+.numberCat {
+    background-color: var(--color-blue);
+    border-radius: 5rem;
+    padding: 0.2rem 1rem;
+    color: var(--color-white);
+}
+.blogarticle--post {
+    padding-bottom: 0;
+    display: flex;
+}
+.blogarticle__image--post {
+    max-width: 100%;
+}
+.post__container {
+    display: flex;
+    flex-direction: column;
 }
