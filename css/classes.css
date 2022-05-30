@@ -93,7 +93,6 @@ text-align:end;
 #previous, #after {
     color: var(--color-blue);
     font-size: 2rem;
-    position: absolute;
     top: 50%;
 }
 #previous {
@@ -108,9 +107,9 @@ text-align:end;
     position: relative;
 }
 .activeTest .parents {
-    animation: slide .4s 0s 1 ease;
+    animation: slide2 .4s 0s 1 ease;
 }
-@keyframes slide {
+@keyframes slide2 {
 0% {
  transform: translateX(-200%);
  opacity: 0;

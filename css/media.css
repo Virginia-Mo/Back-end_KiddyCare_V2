@@ -161,6 +161,7 @@
     .header {
         position:sticky;
         top: 0;
+        z-index: 3;
         box-shadow: 0 0 2.5rem var(--color-graytext);
         background-color: var(--color-white);
     }
@@ -185,11 +186,11 @@
 }
 @keyframes slide {
     0% {
-      transform: translateX(-50%);
+      transform: translateY(-50%);
       opacity: 0;
     }
     100% {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }
