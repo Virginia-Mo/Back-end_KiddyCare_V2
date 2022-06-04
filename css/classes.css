@@ -107,7 +107,7 @@ text-align:end;
     position: relative;
 }
 .activeTest .parents {
-    animation: slide2 .4s 0s 1 ease;
+    animation: slide2 1s ease;
 }
 @keyframes slide2 {
 0% {

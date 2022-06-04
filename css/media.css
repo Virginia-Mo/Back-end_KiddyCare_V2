@@ -181,7 +181,7 @@
         background-color: var(--color-white);
         padding: 0 0 2rem;
         margin-top: 1.5rem;
-        animation: slide .4s 0s 1 ease;
+        animation-name: slide .5s ease;
      }
 }
 @keyframes slide {

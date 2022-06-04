@@ -1,0 +1,40 @@
+:root {
+    --color-blue:#17a2b8;
+    --color-darkblue: #00394f;
+    --color-bluebtn: #138496;
+    --color-darkbluebtn:#001d29;
+    --color-darkgray: #d9dadb;
+    --color-gray:#f8f9fa;
+    --color-graytext: #706f6f;
+    --color-grayborder: #dee2e6;
+    --color-white:#ffffff;
+}
+
+
+.gallery__buttonsbox { 
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.joinclass__btn--gallery {
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border: 0.1rem solid var(--color-blue);
+}
+.gallery-img {
+    max-width: 100%;
+}
+.allphotos {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 115%;
+    padding: 3rem 0;
+}
+.activePhotos {
+    display:block
+}
+.hide {
+    display: none
+}
