@@ -24,18 +24,18 @@
 <body>
     <header class="header">
         <div class="logo"><img src="../img/people.png" alt="logo" class="logo__image"><span
-                class="logo__title">Kiddycaring</span></div>
-                <div class="toggle">
-                    <i class="fas fa-bars open"></i>
-                    <i class="fas fa-times close"></i>
-                </div>
+            class="logo__title"><a href="index.html">Kiddycaring</a></span></div>
+            <div class="toggle">
+                <i class="fas fa-bars open"></i>
+                <i class="fas fa-times close"></i>
+            </div>
         <nav class="navbar">
             <a href="index.html" class="navbar__links navbar__links--left ">Home</a>
             <a href="about.html" class="navbar__links">About</a>
             <a href="classes.html" class="navbar__links">Classes</a>
             <a href="teachers.html" class="navbar__links">Teachers</a>
-            <a href="gallery.html" class="navbar__links">Gallery</a>
-            <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
+            <a href="gallery.html" class="navbar__links" id="galleryLink">Gallery</a>
+            <div class="pageMenuContainer blue-link"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
                 <div class="linkcontainer"><a href="pages.html" class="navbar__links doubleLink">Our Blog</a>
                 <a href="blogdetail.html" class="navbar__links doubleLink">Blog Detail</a></div>
             </div>
@@ -236,18 +236,18 @@
          </div>
              <div class="footer__container-box">
                  <h2 class="footer__title">Quick Link</h2>
-                 <a href="index.html" class="footer__links"> > Home</a>
-                 <a href="about.html" class="footer__links"> > About Us</a>
-                 <a href="classes.html" class="footer__links"> > Our Classes</a>
-                 <a href="teachers.html" class="footer__links"> > Our Teachers</a>
-                 <a href="pages.html" class="footer__links"> > Our Blog</a>
-                 <a href="contact.html" class="footer__links"> > Contact Us</a>
+                 <a href="index.html" class="footer__links"> &#8250; Home</a>
+                 <a href="about.html" class="footer__links">&#8250; About Us</a>
+                 <a href="classes.html" class="footer__links">&#8250; Our Classes</a>
+                 <a href="teachers.html" class="footer__links">&#8250; Our Teachers</a>
+                 <a href="pages.html" class="footer__links">&#8250; Our Blog</a>
+                 <a href="contact.html" class="footer__links">&#8250; Contact Us</a>
              </div>
              <div class="footer__container-box">
                  <h2 class="footer__title">Newsletter</h2>
                  <form action="" class="newsletterform">
-                     <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter">
-                     <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter">
+                     <input type="text" name="name" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter">
+                     <input type="email" name="email" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter">
                      <button type="submit" class="button--blue">Submit Now</button>
                  </form>
              </div>
@@ -258,6 +258,7 @@
                          href="https://www.svgrepo.com/" class="copyrights__links">SVG Repo</a> </p>
                  </div>
          </footer>
-         <script src="../js/script.js"></script>
+         <script src="../js/script.js" defer></script>
+
     </body>
 </html>

@@ -11,21 +11,15 @@
 }
 
 .school-activities {
-    /* display: flex;
-    justify-content:space-between;
-    flex-wrap: wrap;
-    padding: 10rem 0;
-    gap:2.5rem; */
-display:flex;
-flex-direction: column;
-gap: 2.5rem;
+
+    display:flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 .card {
- display:flex;
+    display:flex;
     gap:1rem;
-     /*   width:25%; */
     height:auto;
-    /* padding:3rem; */
     padding:3.5rem;
     background-color: var(--color-gray);
     border-top: 0.1rem solid var(--color-grayborder);
@@ -54,7 +48,6 @@ gap: 2.5rem;
     display: flex;
     flex-direction: column;   
     margin: 10rem 0;
-    /* AJOUT FLEX DIRECTION ET MARGIN */
     gap:4rem
 }
 .school-description__image {
@@ -99,9 +92,9 @@ gap: 2.5rem;
     padding-top:5rem;
 }
 .aboutus__content {
-color: var(--color-graytext);
-line-height: 2.5rem;
-font-size:1.7rem;
+    color: var(--color-graytext);
+    line-height: 2.5rem;
+    font-size:1.7rem;
 }
 .aboutus__checkpoint {
     display:flex;

@@ -1,113 +1,71 @@
-    
-function menuJS(){
-    let toggle = document.querySelector(".toggle");
-    let body = document.querySelector("body");
 
-    toggle.addEventListener("click", e => {
-    body.classList.toggle("openMenu");
-});
+document.addEventListener("DOMContentLoaded", () => {
 
-    let blogMenuContainer = document.querySelector(".pageMenuContainer");
-    let doubleLink = document.querySelectorAll(".doubleLInk");
+  init();
+  function  init() {
+    menuJS();
+    handleGalleryPhotos();
 
-    blogMenuContainer.addEventListener("click", function(){
-    body.classList.toggle("active");
-});
-};
-menuJS();
+  }
+   
+  // Burger menu for mobile
+  function menuJS(){
+    toggle = document.querySelector(".toggle");
+    body = document.querySelector("body");
 
+    toggle.addEventListener("click", (e) => {
+      body.classList.toggle("openMenu");
+    });
 
-function carouselFunction(){
-    position = 0;
-    
-       const prev = document.getElementById("previous")
-       const next = document.getElementById("after")
-       const reviews = document.getElementsByClassName("parents");
-       const bodyT = document.querySelector("body")
-        
-prev.addEventListener("click", e => {            
-            position = position - 1;
-            bodyT.classList.add("activeTest")
-            carousel(position);
-        })
+    blogMenuContainer = document.querySelector(".pageMenuContainer");
+    doubleLink = document.querySelectorAll(".doubleLInk");
 
-next.addEventListener("click",  e => {
-            position = position + 1;
-            bodyT.classList.add("activeTest")
-            carousel(position);
-        })
+    blogMenuContainer.addEventListener("click", () =>{
+      body.classList.toggle("active");
+    });
+  };
+
+  // Gallery Photos    
+   
+  function handleGalleryPhotos(){
+    btnAll = document.querySelector("#all");
+    btnPlaying = document.querySelector("#playingbtn");
+    btnDrawing = document.querySelector("#drawingbtn");
+    btnReading = document.querySelector("#readingbtn");
   
-function carousel(review) {
-        const reviews = document.getElementsByClassName("parents");
+    btnAll.addEventListener("click", () => {
+      show("allphotos");
+      hide("galleryphotos");hide("playing"); hide("drawing"); hide("reading");
+    }); 
+    
+    btnPlaying.addEventListener("click", () => {
+      show("playing");
+      hide("galleryphotos");hide("allphotos"); hide("drawing"); hide("reading");
+
+    });
+    
+    btnDrawing.addEventListener("click", () => {
+      show("drawing");
+      hide("galleryphotos");hide("allphotos"); hide("playing"); hide("reading");
+
+    });
+    
+    btnReading.addEventListener("click", () => {
+      show("reading");
+      hide("galleryphotos");hide("allphotos"); hide("playing"); hide("drawing");
+
+    });
+               
   
-            if (review >= reviews.length) {
-                review = 0;
-                position = 0;
-            }
-            if (review < 0) {
-                review = reviews.length - 1;
-                position = reviews.length - 1;
-            }
-            for (let i = 0; i < reviews.length; i++) {
-                reviews[i].style.display = "none";
-            }
-            reviews[review].style.display = "block";
-        }    
-        carousel(position);
-}
-// carouselFunction();
-
-
-
-//  Quand je clique sur une div; certaines photos apparaissent
-
-
-// let divGallery = document.getElementById("allphotos")
-const btnAll = document.getElementById("all");
-const btnPlaying = document.getElementById("playingbtn");
-const btnDrawing = document.getElementById("drawingbtn");
-const btnReading = document.getElementById("readingbtn");
-
-btnAll.addEventListener("click", e => {
-    show("allphotos");
-    hide("playing"); hide("drawing"); hide("reading");
-}) 
-
-btnPlaying.addEventListener("click", e => {
-  show("playing");
-  hide("allphotos"); hide("drawing"); hide("reading")
-      return
-    })
-
-btnDrawing.addEventListener("click", e => {
-  show("drawing");
-  hide("allphotos"); hide("playing"); hide("reading")
-      return
-     })
-
-btnReading.addEventListener("click", e => {
-        show("reading");
-        hide("allphotos"); hide("playing"); hide("drawing")
-                return
-              })
-             
-
-
-function show(object) {
-    if (document.getElementById)
-    document.getElementById(object).style.display = "block";
+    function show(object) {
+      if (document.getElementById)
+        document.getElementById(object).style.display = "block";
+    };
+    function hide(object) {
+      if (document.getElementById)
+        document.getElementById(object).style.display = "none";
     }
-function hide(object) {
-    if (document.getElementById)
-    document.getElementById(object).style.display = "none";
-    }
+    return;
+  };
 
-
-function createImg(number){
-    let img = document.createElement("img");
-   img.src=`../img/portfolio-${number}.jpg`;
-   return img
-}
-
-let img1 = createImg(1)
-let img2 = createImg(2)
+});

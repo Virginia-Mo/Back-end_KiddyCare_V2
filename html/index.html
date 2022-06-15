@@ -24,17 +24,17 @@
 <body>
     <header class="header">
         <div class="logo"><img src="../img/people.png" alt="logo" class="logo__image"><span
-                class="logo__title">Kiddycaring</span></div>
+                class="logo__title"><a href="index.html">Kiddycaring</a></span></div>
                 <div class="toggle">
                     <i class="fas fa-bars open"></i>
                     <i class="fas fa-times close"></i>
                 </div>
         <nav class="navbar">
-            <a href="index.html" class="navbar__links navbar__links--left ">Home</a>
+            <a href="index.html" class="navbar__links--left blue-link">Home</a>
             <a href="about.html" class="navbar__links">About</a>
             <a href="classes.html" class="navbar__links">Classes</a>
             <a href="teachers.html" class="navbar__links">Teachers</a>
-            <a href="gallery.html" class="navbar__links">Gallery</a>
+            <a href="gallery.html" class="navbar__links" id="galleryLink">Gallery</a>
             <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
                 <div class="linkcontainer"><a href="pages.html" class="navbar__links doubleLink">Our Blog</a>
                 <a href="blogdetail.html" class="navbar__links doubleLink">Blog Detail</a></div>
@@ -42,7 +42,7 @@
             
             <a href="contact.html" class="navbar__links">Contact</a>
         </nav>
-        <a href="" class="joinclass__btn">Join Class</a>
+        <a href="classes.html" class="joinclass__btn">Join Class</a>
     </header>
     <main class="maincontent">
         <section class="banner">
@@ -52,7 +52,7 @@
                 <p class="banner__description">Sea ipsum kasd eirmod kasd magna, est sea et diam ipsum est amet sed sit.
                     Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed ipsum at ipsum nonumy amet. Clita
                     lorem dolore sed stet et est justo dolore.</p>
-                <a href="classes.html" class="banner__link-moreinfos">Learn more</a>
+                <a href="about.html" class="banner__link-moreinfos">Learn more</a>
             </div>
             <div><img src="../img/header.png" alt="banner image" class="banner__image"></div>
         </section>
@@ -108,10 +108,10 @@
                 </article>
             </section>
             <section class="school-description">
-                <div>
+                <div class="from-left slide-in">
                     <img src="../img/about-1.jpg" alt="about" class="school-description__image">
                 </div>
-                <article class="aboutus">
+                <article class="aboutus from-right slide-in">
                     <h3 class="content__subtitle">Learn about us</h3>
                     <h2 class="content__title">Best School For Your Kids</h2>
                     <p class="aboutus__content">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor
@@ -129,7 +129,7 @@
                         </div>
                     </div>
 
-                    <span><a href="" class="aboutus__linkinfos">Learn More</a></span>
+                    <span><a href="about.html" class="aboutus__linkinfos">Learn More</a></span>
                 </article>
             </section>
             <section class="classes">
@@ -159,7 +159,7 @@
                             <td class="table__td">$290 / Month</td>
                         </tr>
                     </table>
-                    <a href="" class="joinclass__btn joinclass__btn--center">Join Now</a>
+                    <a href="#joinForm" class="joinclass__btn joinclass__btn--center">Join Now</a>
                 </article>
                 <article class="classescontent">
                     <img src="../img/class-2.jpg" alt="class2" class="classescontent__image">
@@ -184,7 +184,7 @@
                             <td class="table__td">$290 / Month</td>
                         </tr>
                     </table>
-                    <a href="" class="joinclass__btn joinclass__btn--center">Join Now</a>
+                    <a href="#joinForm" class="joinclass__btn joinclass__btn--center">Join Now</a>
                 </article>
                 <article class="classescontent">
                     <img src="../img/class-3.jpg" alt="class3" class="classescontent__image">
@@ -209,12 +209,12 @@
                             <td class="table__td">$290 / Month</td>
                         </tr>
                     </table>
-                    <a href="" class="joinclass__btn joinclass__btn--center">Join Now</a>
+                    <a href="#joinForm" class="joinclass__btn joinclass__btn--center">Join Now</a>
                 </article>
             </div>
             </section>
             <section class="book">
-                <div class="bookaseat">
+                <div class="bookaseat from-left slide-in">
                     <h3 class="content__subtitle">Book A Seat</h3>
                     <h2 class="content__title">Book a seat for your kid</h2>
                     <p class="bookaseat__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
@@ -230,11 +230,10 @@
                     <span class="bookaseat__goals"><img src="../img/check-green.png" alt="check"
                             class="check check--green">Diam dolor diam elitripsum vero.</span>
                         </div> 
-                    <a href="" class="joinclass__btn">Book Now</a>
                 </div>
-                <div class="formcontainer">
+                <div class="formcontainer from-right slide-in">
                     <h3 class="content__title content__subtitle--white">Book A Seat</h3>
-                    <form action="" class="bookingform">
+                    <form action="" class="bookingform" id="joinForm">
                         <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input">
                         <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input">
                         <select name="class" id="class" class="bookingform__input bookingform__input--select">
@@ -339,7 +338,7 @@
                     <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
                         eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
                         stet...</p>
-                    <a href="" class="joinclass__btn joinclass__btn--center">Read More</a>
+                    <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
                 </article>
                 <article class="blogarticle">
                     <img src="../img/blog-2.jpg" alt="blog2" class="blogarticle__image">
@@ -355,7 +354,7 @@
                     <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
                         eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
                         stet...</p>
-                    <a href="" class="joinclass__btn joinclass__btn--center">Read More</a>
+                    <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
                 </article>
                 <article class="blogarticle">
                     <img src="../img/blog-3.jpg" alt="blog3" class="blogarticle__image">
@@ -371,7 +370,7 @@
                     <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
                         eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
                         stet...</p>
-                    <a href="" class="joinclass__btn joinclass__btn--center">Read More</a>
+                    <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
                 </article>
             </div>
             </section>
@@ -414,18 +413,18 @@
     </div>
         <div class="footer__container-box">
             <h2 class="footer__title">Quick Link</h2>
-            <a href="index.html" class="footer__links"> > Home</a>
-            <a href="about.html" class="footer__links"> > About Us</a>
-            <a href="classes.html" class="footer__links"> > Our Classes</a>
-            <a href="teachers.html" class="footer__links"> > Our Teachers</a>
-            <a href="pages.html" class="footer__links"> > Our Blog</a>
-            <a href="contact.html" class="footer__links"> > Contact Us</a>
+            <a href="index.html" class="footer__links"> &#8250; Home</a>
+            <a href="about.html" class="footer__links">&#8250; About Us</a>
+            <a href="classes.html" class="footer__links">&#8250; Our Classes</a>
+            <a href="teachers.html" class="footer__links">&#8250; Our Teachers</a>
+            <a href="pages.html" class="footer__links">&#8250; Our Blog</a>
+            <a href="contact.html" class="footer__links">&#8250; Contact Us</a>
         </div>
         <div class="footer__container-box">
             <h2 class="footer__title">Newsletter</h2>
             <form action="" class="newsletterform">
-                <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter">
-                <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter">
+                <input type="text" name="name" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter">
+                <input type="email" name="email" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter">
                 <button type="submit" class="button--blue">Submit Now</button>
             </form>
         </div>
@@ -437,7 +436,8 @@
                     href="https://www.svgrepo.com/" class="copyrights__links">SVG Repo</a> </p>
             </div>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/carousel.js" defer></script>
 </body>
 
 </html>

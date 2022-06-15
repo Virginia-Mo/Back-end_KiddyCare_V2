@@ -53,6 +53,11 @@
     justify-content: center;
     align-items: center;
     border: none;
+    cursor: pointer;
+}
+.bookingform__button:hover {
+    background-color: var(--color-darkbluebtn);
+
 }
 .bookingform__input {
     width: 100%;

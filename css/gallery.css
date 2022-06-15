@@ -10,7 +10,6 @@
     --color-white:#ffffff;
 }
 
-
 .gallery__buttonsbox { 
     display: flex;
     justify-content: center;
@@ -21,20 +20,17 @@
     color: var(--color-blue);
     border: 0.1rem solid var(--color-blue);
 }
+.joinclass__btn--gallery:hover {
+    color: var(--color-white);
+}
 .gallery-img {
     max-width: 100%;
+    padding: 2rem 0.5rem 1rem 0.5rem;
 }
-.allphotos {
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 115%;
-    padding: 3rem 0;
-}
-.activePhotos {
-    display:block
-}
+
+.photos__container {
+    width: 100%;
+} 
 .hide {
     display: none
 }
