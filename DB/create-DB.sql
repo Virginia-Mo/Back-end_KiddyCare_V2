@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS "article" (
     "description1" TEXT,
     "title2" TEXT,
     "img2" BYTEA,
-    "description2" TEXT
+    "description2" TEXT,BIGINT"user_id" INTEGER NOT NULL REFERENCES "user"("id")
 );
 
 COMMIT;
