@@ -22,7 +22,8 @@
 - MESSAGE ( code, name, email, subject, message, #codeUser )
 - CLASSBOOKING ( code, name, email, class, #codeUser )
 
-## MPD
+## MPD  
+=> "role" deleted in "user" and "newsletter" changed to "newsletterRequest"
 
 - "user"(
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -39,7 +40,8 @@
     "description1" TEXT,
     "title2" TEXT,
     "img2" BYTEA,
-    "description2" TEXT
+    "description2" TEXT,
+    "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
 )
 - "newsletterRequest"(
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
