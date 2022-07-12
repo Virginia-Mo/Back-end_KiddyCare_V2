@@ -6,13 +6,17 @@ CREATE TABLE IF NOT EXISTS "user" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT,
     "email" TEXT NOT NULL UNIQUE,
-    "password" TEXT NOT NULL
+    "password" TEXT NOT NULL,
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
 );
 CREATE TABLE IF NOT EXISTS "newsletterRequest" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT,
     "email" TEXT NOT NULL UNIQUE,
-    "user_id" INTEGER NOT NULL REFERENCES "user"("id")
+    "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
 );
 CREATE TABLE IF NOT EXISTS "message" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -20,14 +24,18 @@ CREATE TABLE IF NOT EXISTS "message" (
     "email" TEXT NOT NULL UNIQUE,
     "subject" TEXT,
     "message" TEXT,
-    "user_id" INTEGER NOT NULL REFERENCES "user"("id")
+    "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
 );
 CREATE TABLE IF NOT EXISTS "classbooking" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT,
     "email" TEXT NOT NULL UNIQUE,
     "class" TEXT,
-    "user_id" INTEGER NOT NULL REFERENCES "user"("id")
+    "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
 );
 
 CREATE TABLE IF NOT EXISTS "article" (
@@ -39,7 +47,10 @@ CREATE TABLE IF NOT EXISTS "article" (
     "description1" TEXT,
     "title2" TEXT,
     "img2" BYTEA,
-    "description2" TEXT,BIGINT"user_id" INTEGER NOT NULL REFERENCES "user"("id")
+    "description2" TEXT,
+    "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
 );
 
 COMMIT;
