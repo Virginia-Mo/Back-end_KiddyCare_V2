@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 
-const adminController = {
+const userController = {
     login(req, res) {
         res.render("login");
     },
@@ -15,26 +15,28 @@ const adminController = {
         } else if (!userData.password) {
             error = "Password required"
         }
-        let admin;
+        
         if (!error) {
-            admin = await User.findOne({ where: {
+            let user;
+            user = await User.findOne({ where: {
                     email: userData.email
                 }
             })
-        if (!admin) {
+        if (!user) {
                 error = "Wrong password or email"
         }
 
-         const checkPwd = await User.findOne({ where: {
-                password: userData.password
-            }})
+         const checkPwd = await bcrypt.compare(req.body.password, user.password);
+         console.log(checkPwd)
         if (!checkPwd) {
                 error = "Wrong password or email"
         }
 
         if (!error) {
-                req.session.admin = admin;
-                res.redirect("home")
+                req.session.user = user;
+                delete req.session.password;
+                console.log(req.session.user)
+                res.redirect("/user")
         } else {
                 res.render("login", {
                     error: error,
@@ -46,4 +48,4 @@ const adminController = {
 }
 
 
-module.exports = adminController;
+module.exports = userController;

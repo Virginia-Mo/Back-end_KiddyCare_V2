@@ -1,0 +1,19 @@
+<%-include ("../partials/header")%>
+<% if (locals.user.name === 'adminkdc'){%> 
+            
+    <a href="/" class="navbar__links--left blue-link">Message</a>
+    <a href="/about" class="navbar__links">Class Booking</a>
+    <a href="/classes" class="navbar__links">Newsletter Request</a>
+    <a href="/teachers" class="navbar__links">Create Article</a>
+    <a href="/logout" class="navbar__links">Log Out</a>
+   <% } else {%> 
+    <a href="/teachers" class="navbar__links">Create Article</a>
+    <a href="/logout" class="navbar__links">Log Out</a>
+    <% } %> 
+</header> 
+
+<h1>Welcome <%=locals.user.name%> </h1>
+<% if (locals.user.name === 'teacherkdc'){%> 
+
+<p>Feel free to update the school blog when you want ! </p>
+<% } %>

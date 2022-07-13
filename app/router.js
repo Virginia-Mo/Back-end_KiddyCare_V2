@@ -1,6 +1,8 @@
 const express = require("express");
 const mainController = require("./controllers/mainController");
-const adminController = require("./controllers/adminController");
+const loginController = require("./controllers/loginController");
+const userController = require("./controllers/userController");
+const checkedLogged = require("./middleware/checkLogged");
 
 const router = express.Router();
 
@@ -13,7 +15,10 @@ router.get("/pages", mainController.pagesPage);
 router.get("/blogdetails", mainController.blogDetailsPage);
 router.get("/contact", mainController.contactPage);
 
-router.get("/login", adminController.login);
-router.post("/login", adminController.checkin);
+router.get("/login", loginController.login);
+router.post("/login", loginController.checkin);
+
+router.get("/user",checkedLogged, userController.getPage);
+router.get("/logout", checkedLogged, userController.logout);
 
 module.exports = router;
