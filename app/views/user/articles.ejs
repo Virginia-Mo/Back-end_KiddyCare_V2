@@ -1,12 +1,13 @@
-<%-include ("../partials/header")%>
+
 <%-include ("../partials/headUser")%> 
 
-<h1>Bookings</h1>
+<h1>Articles</h1>
 
 <div class="container" style= "display : flex">
 
-    <h2>Drawing Class</h2>
+
 <% for(const article of articles){ %>
 <li><%=article.maintitle%></li>
+<a href="/user/removearticle/<%=article.id%>">Remove</a>
 <%    } %> 
 </div>

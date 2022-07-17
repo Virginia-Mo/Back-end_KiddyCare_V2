@@ -63,6 +63,15 @@ CREATE TABLE IF NOT EXISTS "article" (
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
+CREATE TABLE IF NOT EXISTS "comment" (
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT,
+    "email" TEXT NOT NULL UNIQUE,
+    "message" TEXT,
+    "article_id" INTEGER NOT NULL REFERENCES "article"("id"),
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
+);
 INSERT INTO "tag" ("name") VALUES('Arts at school'),('Sports'),('Events'),('Homework Methodology');
 INSERT INTO "user" ("name", "email","password") VALUES ('adminKDC','admin@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO'),('teacherKDC','teacher@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO');
 

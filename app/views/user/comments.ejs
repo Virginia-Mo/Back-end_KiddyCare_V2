@@ -1,0 +1,13 @@
+
+<%-include ("../partials/headUser")%> 
+
+<h1>Comments</h1>
+
+<div class="container" style= "display : flex">
+
+
+<% for(const comment of comments){ %>
+<li><%=comment.name%>, <%=comment.email%> : <%comment.message%></li>
+<a href="/user/removecomment/<%=comment.id%>">Remove</a>
+<%    } %> 
+</div>

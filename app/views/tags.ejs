@@ -7,7 +7,7 @@
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
     <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
-        <a href="/blogdetails" class="navbar__links doubleLink">Last Articlel</a></div>
+        <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
     <a href="/contact" class="navbar__links">Contact</a>
@@ -15,17 +15,19 @@
 <a href="/login">Log in</a>
 <a href="/classes" class="joinclass__btn">Join Class</a>
 </header>
-<% if(typeof error !== 'undefined') { %>
-    <p><%= error %></p>
-  <% } %> 
+<% if (foundarticles.length == 0){%>
+    <p>No article found in this category</p>
+<%}else {
+       for (const article of foundarticles){%>
+                <article class="blogarticle blogarticle--post">
+                   <img src="../uploads/<%=article.main_img%>" alt="blog3" class="blogarticle__image--post">
+                    <div class="post__container">
+                    <h3 class="blogarticle__title"><%=article.maintitle%></h3>
+                    <p class="blogarticle__details">
+            
+                    </p></div>
+                </article>
+    <%}}%>
 
-<h2>Bienvenue</h2>
-<form action="" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" >
-    <label for="name">Email</label>
-    <input type="email" name="email" id="email" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-    <button type="submit">Log in</button>
-</form>
+    </main>
+<%-include ("partials/footer")%>

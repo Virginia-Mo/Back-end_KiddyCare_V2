@@ -1,4 +1,4 @@
-<%-include ("../partials/header")%>
+
 <%-include ("../partials/headUser")%> 
 
 <h1>Bookings</h1>
@@ -12,6 +12,7 @@
     <p>Name : <%= booking.name %> </p>
     <p>Email: <%= booking.email %> </p>
     <p>Created at : <%= booking.createdAt %> </p>
+    <a href="/admin/removebooking/<%=booking.id%>">Remove</a>
 </div>
   <%}}%>
    <h2>Language Class</h2>
@@ -22,6 +23,7 @@
     <p>Name : <%= booking.name %> </p>
     <p>Email: <%= booking.email %> </p>
     <p>Created at : <%= booking.createdAt %> </p>
+    <a href="/admin/removebooking/<%=booking.id%>">Remove</a>
 </div>  <%}}%>
  <h2>Science Class</h2>
  <% for(const booking of bookings){
@@ -32,6 +34,7 @@
     <p>Name : <%= booking.name %> </p>
     <p>Email: <%= booking.email %> </p>
     <p>Created at : <%= booking.createdAt %> </p>
+    <a href="/admin/removebooking/<%=booking.id%>">Remove</a>
 </div>
   <%}
  } %> 

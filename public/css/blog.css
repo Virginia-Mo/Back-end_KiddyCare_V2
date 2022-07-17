@@ -248,6 +248,7 @@ height: 2rem;
 }
 .blog__author-img {
     border-radius: 50%;
+    max-width: 100%;
 }
 .blog__author--p {
     line-height: 2.5rem;
@@ -292,6 +293,8 @@ height: 2rem;
 .blogarticle--post {
     padding-bottom: 0;
     display: flex;
+    width: 45rem;
+    height: 15rem;
 }
 .blogarticle__image--post {
     max-width: 100%;
@@ -299,4 +302,7 @@ height: 2rem;
 .post__container {
     display: flex;
     flex-direction: column;
+}
+.link_blog {
+    text-decoration: none;
 }

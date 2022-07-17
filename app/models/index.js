@@ -4,7 +4,7 @@ const Message = require("./message");
 const NewsletterRequest = require("./newsletterRequest");
 const Classbooking = require("./classbooking");
 const Tag = require("./tag");
-
+const Comment = require("./comment");
 
 User.hasMany(Article,{
   as :"article",
@@ -47,7 +47,14 @@ Article.belongsTo(Tag, {
   as : "tag",
   foreignKey : "tag_id",
 });
-
-module.exports = { User, Article, Classbooking, Message, NewsletterRequest, Tag };
+Article.hasMany(Comment,{
+  as :"comments",
+  foreignKey : "article_id",
+});
+Comment.belongsTo(Article,{
+  as :"article",
+  foreignKey : "article_id",
+});
+module.exports = { User, Article, Classbooking, Message, NewsletterRequest, Tag, Comment };
 
 

@@ -7,7 +7,7 @@
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
     <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
-        <a href="/blogdetails" class="navbar__links doubleLink">Blog Detail</a></div>
+        <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
     <a href="/contact" class="navbar__links">Contact</a>
@@ -31,105 +31,16 @@
 
     <% for (const article of articles){ %>         
             <article class="blogarticle">
-                <img src="../img/blog-1.jpg" alt="blog1" class="blogarticle__image">
-                <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
+                <img src="../uploads/<%=article.main_img%>" alt="blog1" class="blogarticle__image">
+                <h3 class="blogarticle__title"><%=article.maintitle%></h3>
                 <p class="blogarticle__details">
-                    <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
-                        class="admin">Admin</span>
-                    <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span
-                        class="webdesign">Web Design</span>
-                    <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span
-                        class="comments">15</span>
+                   
                 </p>
-                <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                    eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                    stet...</p>
+                <p class="blogarticle__description"><%=article.introduction%></p>
                 <a href="/blogdetails/<%=article.id%>" class="joinclass__btn joinclass__btn--center">Read More</a>
             </article>
         <%}%>
-            <!-- <article class="blogarticle">
-                <img src="../img/blog-2.jpg" alt="blog2" class="blogarticle__image">
-                <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                <p class="blogarticle__details">
-                    <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
-                        class="admin">Admin</span>
-                    <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span
-                        class="webdesign">Web Design</span>
-                    <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span
-                        class="comments">15</span>
-                </p>
-                <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                    eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                    stet...</p>
-                <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-            </article>
-            <article class="blogarticle">
-                <img src="../img/blog-3.jpg" alt="blog3" class="blogarticle__image">
-                <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                <p class="blogarticle__details">
-                    <img src="../img/user.png" alt="user icon" class="blogarticle__img">
-                    <span class="admin">Admin</span>
-                    <img src="../img/folder.png" alt="folder icon" class="blogarticle__img">
-                    <span class="webdesign">Web Design</span>
-                    <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img">
-                    <span class="comments">15</span>
-                </p>
-                <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                    eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                    stet...</p>
-                <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-            </article>
-            <article class="blogarticle">
-                <img src="../img/blog-2.jpg" alt="blog2" class="blogarticle__image">
-                <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                <p class="blogarticle__details">
-                    <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
-                        class="admin">Admin</span>
-                    <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span
-                        class="webdesign">Web Design</span>
-                    <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span
-                        class="comments">15</span>
-                </p>
-                <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                    eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                    stet...</p>
-                <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-            </article>
-            <article class="blogarticle">
-                <img src="../img/blog-3.jpg" alt="blog3" class="blogarticle__image">
-                <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                <p class="blogarticle__details">
-                    <img src="../img/user.png" alt="user icon" class="blogarticle__img">
-                    <span class="admin">Admin</span>
-                    <img src="../img/folder.png" alt="folder icon" class="blogarticle__img">
-                    <span class="webdesign">Web Design</span>
-                    <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img">
-                    <span class="comments">15</span>
-                </p>
-                <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                    eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                    stet...</p>
-                <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-            </article>
-            <article class="blogarticle">
-                <img src="../img/blog-1.jpg" alt="blog1" class="blogarticle__image">
-                <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                <p class="blogarticle__details">
-                    <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
-                        class="admin">Admin</span>
-                    <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span
-                        class="webdesign">Web Design</span>
-                    <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span
-                        class="comments">15</span>
-                </p>
-                <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                    eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                    stet...</p>
-                <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-            </article>
-        </div>
-        </section>
-              </div> -->
+           
 
     </main>
 <%-include ("partials/footer")%>

@@ -7,7 +7,7 @@
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
     <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
-        <a href="/blogdetails" class="navbar__links doubleLink">Blog Detail</a></div>
+        <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
     <a href="/contact" class="navbar__links">Contact</a>
@@ -28,7 +28,7 @@
     <h3 class="content__subtitle">BLOG DETAIL PAGE</h3>
     <!-- RENDRE PAGE DYNAMIQUE À PARTIR D'ICI -->
     <h2 class="content__title content__title--size left"><%=foundArticle.maintitle %> </h2>
-<div class="article__container">
+ <div class="article__container">
     <article class="blogarticle--page">
         <p class="blogarticle__details-page">
             <!-- <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
@@ -60,57 +60,64 @@
        </article>
 </div>
 </section>
+<%if (comments){%>
 <section class="comments">
-    <h2 class="content__title content__title--size">3 Comments</h2>
+    <h2 class="content__title content__title--size"><%=comments.length%> Comments</h2>
+    <%for (const comment of comments){%>
     <div class="comment--detail">
-        <div class="div__userimg"><img src="../img/user.jpg" alt="user image" class="comment__userimg"></div>
        <div class="div__usercomment">
-        <strong class="comment--writer bold">John Doe</strong>
-        <em class="datetime"> 01 Jan 2030 at 3pm</em>
-        <p class="comment--p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facere delectus. Fuga illo possimus enim. Sequi voluptatibus perspiciatis eaque praesentium suscipit recusandae expedita ea, esse quaerat voluptates deleniti autem tempora?Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis necessitatibus sit sequi cum quaerat.</p>
-        <button type="button" class="comment__btn">Reply</button></div>
-    </div>
-    <div class="comment--detail">
-        <div class="div__userimg"><img src="../img/user.jpg" alt="user image" class="comment__userimg"></div>
-       <div class="div__usercomment">
-        <strong class="comment--writer bold">John Doe</strong>
-        <em class="datetime"> 01 Jan 2030 at 3pm</em>
-        <p class="comment--p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facere delectus. Fuga illo possimus enim. Sequi voluptatibus perspiciatis eaque praesentium suscipit recusandae expedita ea, esse quaerat voluptates deleniti autem tempora?Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis necessitatibus sit sequi cum quaerat.</p>
-        <button type="button" class="comment__btn">Reply</button></div>
-    </div>
-    <div class="comment--detail comment--detail--reply">
-        <div class="div__userimg"><img src="../img/user.jpg" alt="user image" class="comment__userimg"></div>
-       <div class="div__usercomment">
-        <strong class="comment--writer bold">John Doe</strong>
-        <em class="datetime"> 01 Jan 2030 at 3pm</em>
-        <p class="comment--p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facere delectus. Fuga illo possimus enim. Sequi voluptatibus perspiciatis eaque praesentium suscipit recusandae expedita ea, esse quaerat voluptates deleniti autem tempora?Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis necessitatibus sit sequi cum quaerat.</p>
-        <button type="button" class="comment__btn">Reply</button></div>
-    </div>
+        <strong class="comment--writer bold"><%=comment.name%></strong>
+        <em class="datetime"> <%=comment.createdAt%></em>
+        <p class="comment--p"><%=comment.message%></p>
+        </div>
+    </div><%}
+}%>
 </section>
 <section class="blog__messageform">
     <div class="contact__formcontainer">
         <h3 class="content__title contact__title ">Leave a comment</h3>
-        <form action="" class="contact__form--blog ">
-            <label class="label" for="name">Name *</label>
-            <input type="text" id="name" name="name" class="contactform__input" required>
-            <label class="label" for="email">Email *</label>
-            <input type="email" id="email" name="email" class="contactform__input" required>
-            <label class="label" for="nwebsite">Website</label>
-            <input type="text" name="website" id="website" class="contactform__input">
-            <label class="label" for="contact__message">Message *</label>
-            <textarea name="contact__message" id="contact__message" cols="10" rows="10" class="contactform__input contact__message" required></textarea>
+        <form action="" class="contact__form--blog " method="POST">
+            <label class="label" for="namecomment">Name *</label>
+            <input type="text" id="name" name="namecomment" class="contactform__input" required>
+            <label class="label" for="emailcomment">Email *</label>
+            <input type="email" id="email" name="emailcomment" class="contactform__input" required>
+            
+            <label class="label" for="comment__message">Message *</label>
+            <textarea name="comment__message" id="contact__message" cols="10" rows="10" class="contactform__input contact__message" required></textarea>
             <button type="submit" class="contact__btn contact__btn--comment ">Leave a comment</button>
         </form>
     </div>
     </section>
 </div>    
 <aside>
-<div class="blog__author">
-<img src="../uploads/<%=foundArticle.author_img%>" alt="blog-author-img" class="blog__author-img">
-<h2 class="blogarticle__title blogarticle__title--author"><%=foundArticle.authorname%></h2>
-
-<p class="blog__author--p"><%=foundArticle.authorjob%> </p>
-</div>
-
+ 
+    <div class="blog__author">
+    <img src="../uploads/<%=foundArticle.author_img%>" alt="blog-author-img" class="blog__author-img">
+    <h2 class="blogarticle__title blogarticle__title--author"><%=foundArticle.authorname%></h2>
+    
+    <p class="blog__author--p"><%=foundArticle.authorjob%> </p>
+    </div>
+    
+    
+    <section class="categories">
+    <h2 class="content__title">Categories</h2>
+    <ul><% for (const tag of tags){%>
+    <li class="list-elem"><a href="/tag/<%=tag.id%>" class="categories__links"><%=tag.name%></a></li>
+    <% }%>
+    </ul>
+    
+    </section>
+    <section class="recent__post">
+        <h2 class="content__title content__title--size">Recent Post</h2>
+        <% for (const article of articles){%>
+        <article class="blogarticle blogarticle--post">
+            <a href="/blogdetails/<%=article.id%>" class="link_blog"><img src="../uploads/<%=article.main_img%>" alt="blog3" class="blogarticle__image--post">
+            <div class="post__container">
+            <h3 class="blogarticle__title"><%=article.maintitle%></h3>
+            </a>
+        </article>
+    <%}%>
+    </section>
+    </aside>
 </main>
     <%-include ("partials/footer")%>
