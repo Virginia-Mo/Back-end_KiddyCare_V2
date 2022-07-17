@@ -18,7 +18,7 @@
 <main class="maincontent">
     <section class="banner banner__pages">
 <div class="banner__part1">
-    <h1 class="banner__title">Last Article</h1>
+    <h1 class="banner__title">Article</h1>
     <p class="banner__description banner__description--pages"><a href="index.html" class="banner__link"> Home</a> / Blog Detail</p>
 </div>
 </section>
@@ -27,7 +27,7 @@
 <section class="blogcontent">
     <h3 class="content__subtitle">BLOG DETAIL PAGE</h3>
     <!-- RENDRE PAGE DYNAMIQUE À PARTIR D'ICI -->
-    <h2 class="content__title content__title--size left"><%= newArticle.maintitle  %> </h2>
+    <h2 class="content__title content__title--size left"><%=foundArticle.maintitle %> </h2>
 <div class="article__container">
     <article class="blogarticle--page">
         <p class="blogarticle__details-page">
@@ -39,24 +39,24 @@
                 class="comments">15</span> -->
                
         </p>
-        <img src="../uploads/<%=newArticle.main_img%>" alt="blog1" class="blogarticle__image--detail1">
+        <img src="../uploads/<%=foundArticle.main_img%>" alt="blog1" class="blogarticle__image--detail1">
 
-        <p class="blogarticle__description-page"><%=newArticle.introduction%></p>
+        <p class="blogarticle__description-page"><%=foundArticle.introduction%></p>
 
     </article>
 
     <article class="blogarticle--page">
-     <h3 class="blogarticle__title blogarticle__title-page"><%=newArticle.title1%></h3>
-        <img src="../uploads/<%=newArticle.img1%>" alt="blog2" class="blogarticle__image--detail2">
+     <h3 class="blogarticle__title blogarticle__title-page"><%=foundArticle.title1%></h3>
+        <img src="../uploads/<%=foundArticle.img1%>" alt="blog2" class="blogarticle__image--detail2">
 
-        <p class="blogarticle__description-page"><%=newArticle.description1%></p>
+        <p class="blogarticle__description-page"><%=foundArticle.description1%></p>
     </article>
     
     <article class="blogarticle--page">
-        <h3 class="blogarticle__title blogarticle__title-page"><%=newArticle.title2%></h3>
-           <img src="../uploads/<%=newArticle.img2%>" alt="blog2" class="blogarticle__image--detail3">
+        <h3 class="blogarticle__title blogarticle__title-page"><%=foundArticle.title2%></h3>
+           <img src="../uploads/<%=foundArticle.img2%>" alt="blog2" class="blogarticle__image--detail3">
 
-           <p class="blogarticle__description-page"><%=newArticle.description2%></p>
+           <p class="blogarticle__description-page"><%=foundArticle.description2%></p>
        </article>
 </div>
 </section>
@@ -106,67 +106,11 @@
 </div>    
 <aside>
 <div class="blog__author">
-<img src="../uploads/<%=newArticle.author_img%>" alt="blog-author-img" class="blog__author-img">
-<h2 class="blogarticle__title blogarticle__title--author"><%=newArticle.authorname%></h2>
+<img src="../uploads/<%=foundArticle.author_img%>" alt="blog-author-img" class="blog__author-img">
+<h2 class="blogarticle__title blogarticle__title--author"><%=foundArticle.authorname%></h2>
 
-<p class="blog__author--p"><%=newArticle.authorjob%> </p>
+<p class="blog__author--p"><%=foundArticle.authorjob%> </p>
 </div>
-<div>
-<form action="" class="search__form ">
-<input class="contactform__input" type="text" name="search" id="search" placeholder="Keyword">
-<button type="button" class="search__button">&#x1F50D;</button></form>
-</div>
-<section class="categories">
-<h2 class="content__title">Categories</h2>
-<ul><% for (const tag of tags){%>
-<li class="list-elem"><a href="" class="categories__links"><%=tag.name%><span class="numberCat">20</span></a></li>
-<% }%>
-</ul>
 
-</section>
-<section class="recent__post">
-    <h2 class="content__title content__title--size">Recent Post</h2>
-    <article class="blogarticle blogarticle--post">
-       <img src="../img/post-1.jpg" alt="blog3" class="blogarticle__image--post">
-        <div class="post__container">
-        <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-        <p class="blogarticle__details">
-            <img src="../img/user.png" alt="user icon" class="blogarticle__img">
-            <span class="admin">Admin</span>
-            <img src="../img/folder.png" alt="folder icon" class="blogarticle__img">
-            <span class="webdesign">Web Design</span>
-            <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img">
-            <span class="comments">15</span>
-        </p></div>
-    </article>
-    <article class="blogarticle blogarticle--post">
-        <img src="../img/post-2.jpg" alt="blog3" class="blogarticle__image--post">
-        <div class="post__container">
-         <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-         <p class="blogarticle__details">
-             <img src="../img/user.png" alt="user icon" class="blogarticle__img">
-             <span class="admin">Admin</span>
-             <img src="../img/folder.png" alt="folder icon" class="blogarticle__img">
-             <span class="webdesign">Web Design</span>
-             <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img">
-             <span class="comments">15</span>
-         </p></div>
-     </article>
-     <article class="blogarticle blogarticle--post">
-        <img src="../img/post-3.jpg" alt="blog3" class="blogarticle__image--post">
-        <div class="post__container">
-         <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-         <p class="blogarticle__details">
-             <img src="../img/user.png" alt="user icon" class="blogarticle__img">
-             <span class="admin">Admin</span>
-             <img src="../img/folder.png" alt="folder icon" class="blogarticle__img">
-             <span class="webdesign">Web Design</span>
-             <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img">
-             <span class="comments">15</span>
-         </p></div>
-     </article>
-</section>
-</aside>
-</div>         
 </main>
     <%-include ("partials/footer")%>

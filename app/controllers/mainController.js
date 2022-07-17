@@ -1,3 +1,5 @@
+const { Article, Tag } = require("../models");
+
 const mainController = {
   homePage(req,res) {
     res.render("home");
@@ -14,11 +16,22 @@ const mainController = {
   galleryPage(req,res) {
     res.render("gallery");
   },
-  pagesPage(req,res) {
-    res.render("pages");
+  pagesPage : async(req,res) => {
+    const articles = await Article.findAll();
+    res.render("pages", {articles});
   },
-  blogDetailsPage(req,res) {
-    res.render("blogDetails");
+  blogDetailsPage: async(req,res)=> {
+    const tags = await Tag.findAll();
+    const newArticle = await Article.findOne({order : [['createdAt', 'DESC']]})
+    // const tag = await Tag.findByPk({where : {id : newArticle.tag_id}})
+    res.render("blogDetails", {newArticle, tags});
+  },
+  searchedArticle : async (req,res) => {
+    const articleid = req.params.id;
+    console.log(articleid)
+    const foundArticle = await Article.findByPk(articleid);
+    console.log(foundArticle)
+    res.render("searchedArticle", {foundArticle})
   },
   contactPage(req,res) {
     res.render("contact");

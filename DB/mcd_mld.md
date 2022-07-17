@@ -11,8 +11,11 @@
 - NEWSLETTER : code, name, email
 - ACCESS, 0N USER, 11 NEWSLETTER
 - ARTICLE : code, mainImg, introduction, title1, img1, description1, title2, img2, description2
+- HAS , ON TAG, 11 ARTICLE
+- TAG : code, name
 
-![photo](../public/img/mcd.png)
+
+![photo](../public/img/Users.svg)
 
 ## MLD
 
@@ -21,7 +24,7 @@
 - USER ( code, name, email, password, role)
 - MESSAGE ( code, name, email, subject, message, #codeUser )
 - CLASSBOOKING ( code, name, email, class, #codeUser )
-
+-TAG (code, name)
 ## MPD  
 => "role" deleted in "user" and "newsletter" changed to "newsletterRequest"
 
@@ -41,6 +44,7 @@
     "title2" TEXT,
     "img2" BYTEA,
     "description2" TEXT,
+    "tag_id" INTEGER NOT NULL REFERENCES "tag"("id"),
     "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
 )
 - "newsletterRequest"(
@@ -63,4 +67,8 @@
     "email" TEXT NOT NULL UNIQUE,
     "class"
     "user_id" INTEGER NOT NULL REFERENCES "user"("id"), 
+)
+- "tag"( 
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT,
 )

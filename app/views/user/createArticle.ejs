@@ -1,0 +1,49 @@
+<%-include ("../partials/header")%>
+<%-include ("../partials/headUser")%> 
+
+<form action="" method="POST" enctype="multipart/form-data">
+    <label for="maintitle">Main Title</label>
+    <input type="text" name="maintitle">
+
+    <label for="mainimg">Main Image</label>
+    <input type="file" name="mainimg">
+
+    <label for="description">Introduction</label>
+    <textarea name="introduction" id="" cols="30" rows="10"></textarea>
+    
+    <label for="title1">First Title</label>
+    <input type="text" name="title1">
+    
+    <label for="img1">First image</label>
+    <input type="file" name="img1">
+
+        
+    <label for="description1">First Description</label>
+    <textarea name="description1" id="" cols="30" rows="10"></textarea>
+        
+    <label for="title2">Second Title</label>
+    <input type="text" name="title2">
+    
+    <label for="img2">Second image</label>
+    <input type="file" name="img2">
+       
+    <label for="description2">Second Description</label>
+    <textarea name="description2" id="" cols="30" rows="10"></textarea>
+
+
+    <label for="tag">Tag</label>
+    <select name="tag" id="tag">
+        <option value="1">Arts at school</option>
+        <option value="2">Sports</option>
+        <option value="3">Events</option>
+        <option value="4">Homework Methodology</option>
+    </select>
+    <label for="profile">Your photo</label>
+    <input type="file" name="profile">
+    <label for="name">Your name</label>
+    <input type="text" name="name">
+    <label for="job">Your job</label>
+    <input type="text" name="job">
+
+    <button type="submit">Créer</button>
+</form>

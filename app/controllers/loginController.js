@@ -7,27 +7,34 @@ const userController = {
     },
 
     checkin: async (req,res) => {
+        try {
         const userData = req.body;
 
         let error ='';
-        if (!userData.email) {
-            error = "Email required"
-        } else if (!userData.password) {
+        if (userData.email == '') {
+            error = "Email required";
+            
+        } else if (req.body.password == '') {
             error = "Password required"
-        }
-        
-        if (!error) {
-            let user;
-            user = await User.findOne({ where: {
-                    email: userData.email
-                }
+            res.render("login", {
+                error: error,
             })
-        if (!user) {
-                error = "Wrong password or email"
+            
         }
 
-         const checkPwd = await bcrypt.compare(req.body.password, user.password);
-         console.log(checkPwd)
+        if (!error) {
+            let user;
+            user = await User.findOne({ where: { email: userData.email }});
+         
+        if (!user) {
+                error = "Wrong password or email"
+                res.render("login", {
+                    error: error,
+                })
+                return
+        }
+       const checkPwd = await bcrypt.compare(req.body.password, user.password);
+   
         if (!checkPwd) {
                 error = "Wrong password or email"
         }
@@ -38,12 +45,19 @@ const userController = {
                 console.log(req.session.user)
                 res.redirect("/user")
         } else {
-                res.render("login", {
+             res.render("login", {
                     error: error,
-                    data: userData
                 })
-            }
+                return
         }
+       
+       }
+  
+            
+        
+    } catch (error) {
+        res.status(500).send("Server Error")
+    }
     }
 }
 

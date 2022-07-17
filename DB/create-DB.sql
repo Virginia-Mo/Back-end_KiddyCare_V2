@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS "user", "newsletterRequest","message","classbooking","article";
+DROP TABLE IF EXISTS "user", "newsletterRequest","message","classbooking","article","tag";
 
 CREATE TABLE IF NOT EXISTS "user" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -32,25 +32,38 @@ CREATE TABLE IF NOT EXISTS "classbooking" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT,
     "email" TEXT NOT NULL UNIQUE,
-    "class" TEXT,
+    "class" INTEGER,
     "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
+);
+CREATE TABLE IF NOT EXISTS "tag" (
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
 
 CREATE TABLE IF NOT EXISTS "article" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "mainImg" BYTEA,
-    "introduction" TEXT,
-    "title1" TEXT,
-    "img1" BYTEA,
-    "description1" TEXT,
-    "title2" TEXT,
-    "img2" BYTEA,
-    "description2" TEXT,
+    "maintitle" TEXT NOT NULL,
+    "main_img" TEXT NOT NULL,
+    "introduction" TEXT NOT NULL,
+    "title1" TEXT NOT NULL,
+    "img1" TEXT NOT NULL,
+    "description1" TEXT NOT NULL,
+    "title2" TEXT NOT NULL,
+    "img2" TEXT NOT NULL,
+    "description2" TEXT NOT NULL,
+    "author_img" TEXT NOT NULL,
+    "authorname" TEXT NOT NULL,
+    "authorjob" TEXT NOT NULL,
+    "tag_id" INTEGER NOT NULL REFERENCES "tag"("id"),
     "user_id" INTEGER NOT NULL REFERENCES "user"("id"),
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
+INSERT INTO "tag" ("name") VALUES('Arts at school'),('Sports'),('Events'),('Homework Methodology');
+INSERT INTO "user" ("name", "email","password") VALUES ('adminKDC','admin@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO'),('teacherKDC','teacher@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO');
 
 COMMIT;

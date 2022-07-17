@@ -3,7 +3,9 @@ const sequelize = require("../database");
 
 class User extends Model{}
 User.init({
-  name: DataTypes.TEXT,
+  name: {
+    type: DataTypes.TEXT
+  },
   email: {
     type: DataTypes.TEXT,
     allowNull: false,

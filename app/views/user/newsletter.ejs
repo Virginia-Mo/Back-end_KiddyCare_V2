@@ -1,0 +1,11 @@
+<%-include ("../partials/header")%>
+<%-include ("../partials/headUser")%> 
+
+<h1>Newsletter Requests</h1>
+<% for(const request of requests){ %> 
+<div class="request_container">
+    <p>Name : <%= request.name %> </p>
+    <p>Email: <%= request.email %> </p>
+    <p>Created at : <%= request.createdAt %> </p>
+</div>
+<% } %> 

@@ -1,9 +1,12 @@
-const {DataTypes, Model} = require("sequelize");
+const { DataTypes, Model} = require("sequelize");
 const sequelize = require("../database");
+const User = require("./user");
 
 class Message extends Model{}
 Message.init({
-  name: DataTypes.TEXT,
+  name: {
+    type: DataTypes.TEXT
+  },
   email: {
     type: DataTypes.TEXT,
     allowNull: false,
@@ -12,13 +15,17 @@ Message.init({
       isEmail: true, 
     }
   },
-  subject : DataTypes.TEXT,
-  message : DataTypes.TEXT,
+  subject : {
+    type: DataTypes.TEXT
+  },
+  message : {
+    type: DataTypes.TEXT
+  },
   user_id : {
     type : DataTypes.INTEGER,
     references : {
       model : User,
-      key: id ,
+      key: "id" ,
     }
   }
 }, {

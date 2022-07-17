@@ -1,9 +1,12 @@
 const {DataTypes, Model} = require("sequelize");
 const sequelize = require("../database");
+const User = require("./user");
 
 class NewsletterRequest extends Model{}
 NewsletterRequest.init({
-  name: DataTypes.TEXT,
+  name:{
+    type: DataTypes.TEXT
+  },
   email: {
     type: DataTypes.TEXT,
     allowNull: false,
@@ -16,7 +19,7 @@ NewsletterRequest.init({
     type : DataTypes.INTEGER,
     references : {
       model : User,
-      key: id ,
+      key: "id",
     }
   }
 }, {

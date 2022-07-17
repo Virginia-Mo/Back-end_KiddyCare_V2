@@ -1,0 +1,13 @@
+<% if (locals.user.name === 'adminKDC'){%> 
+            
+    <a href="/admin/message" class="navbar__links">Message</a>
+    <a href="/admin/classbooking" class="navbar__links">Class Booking</a>
+    <a href="/admin/newsletter" class="navbar__links">Newsletter Request</a>
+    <a href="/teachers" class="navbar__links">Create Article</a>
+    <a href="/logout" class="navbar__links">Log Out</a>
+   <% } else {%> 
+    <a href="/user/createarticle" class="navbar__links">Create Article</a>
+    <a href="/user/articles" class="navbar__links">Articles</a>
+    <a href="/logout" class="navbar__links">Log Out</a>
+    <% } %> 
+</header> 

@@ -1,9 +1,12 @@
 const {DataTypes, Model} = require("sequelize");
 const sequelize = require("../database");
+const User = require("./user");
 
 class Classbooking extends Model{}
 Classbooking.init({
-  name: DataTypes.TEXT,
+  name:{
+    type: DataTypes.TEXT
+  },
   email: {
     type: DataTypes.TEXT,
     allowNull: false,
@@ -12,12 +15,14 @@ Classbooking.init({
       isEmail: true, 
     }
   },
-  class : DataTypes.TEXT,
+  class : {
+    type: DataTypes.INTEGER,
+  },
   user_id : {
     type : DataTypes.INTEGER,
     references : {
       model : User,
-      key: id ,
+      key: 'id' ,
     }
   }
 }, {

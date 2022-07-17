@@ -1,23 +1,60 @@
-const {DataTypes, Model} = require("sequelize");
+const { DataTypes, Model }  = require("sequelize");
 const sequelize = require("../database"); 
+const { Tag, User } = require("../models");
 
 class Article extends Model{}
 Article.init({
-  mainImg : DataTypes.BYTEA,
-  introduction : DataTypes.TEXT,
-  title1 : DataTypes.TEXT,
-  img1 : DataTypes.BYTEA,
-  description1 : DataTypes.TEXT,
-  title2 : DataTypes.TEXT,
-  img2 : Datatypes.BYTEA,
-  description2 : DataTypes.TEXT,
+  maintitle : {
+   type :  DataTypes.TEXT
+  },
+  main_img : {
+    type : DataTypes.TEXT
+  },
+  introduction : {
+    type : DataTypes.TEXT
+  },
+  title1 : {
+    type : DataTypes.TEXT
+  } ,
+  img1 : {
+    type : DataTypes.TEXT
+  } ,
+  description1 : {
+    type : DataTypes.TEXT
+  } ,
+  title2 : {
+    type : DataTypes.TEXT
+  } ,
+  img2 : {
+    type : DataTypes.TEXT
+  } ,
+  description2 : {
+    type : DataTypes.TEXT
+  } ,
+  author_img : {
+    type : DataTypes.TEXT
+  },
+  authorname : {
+    type : DataTypes.TEXT
+  },
+  authorjob: {
+    type : DataTypes.TEXT
+  },
+  tag_id : {
+    type : DataTypes.INTEGER,
+    references : {
+      model : Tag,
+      key: "id" ,
+    }
+  },
   user_id : {
     type : DataTypes.INTEGER,
     references : {
       model : User,
-      key: id ,
+      key: "id",
     }
-  }
+  },
+
 }, {
   sequelize,
   tableName: "article"

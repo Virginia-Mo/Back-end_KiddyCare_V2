@@ -1,0 +1,13 @@
+<%-include ("../partials/header")%>
+<%-include ("../partials/headUser")%> 
+
+<h1>Messages</h1>
+<% for(const message of messages){ %> 
+<div class="message_container">
+    <p>Name : <%= message.name %> </p>
+    <p>Email: <%= message.email %> </p>
+    <p>Subject :<%= message.subject %> </p>
+    <p>Message:<%= message.message %> </p>
+    <p>Created at : <%= message.createdAt %> </p>
+</div>
+<% } %> 
