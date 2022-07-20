@@ -53,6 +53,13 @@
     .banner__description {
         margin: 0 auto;
     }
+    .navContainer {
+        flex-direction: row;
+        gap: 5rem;
+    }
+    .message_container {
+        flex-wrap: nowrap;
+    }
     .card {
         width: 30%;
         box-sizing: border-box;
@@ -134,7 +141,7 @@
     .bigcontainer{
         display: flex;
         padding: 6rem 30rem;
-        gap: 4rem;
+        gap: 10rem;
     }
     .blogdetail__container {
         flex: 2;
@@ -187,6 +194,10 @@
         padding: 0 0 2rem;
         margin-top: 1.5rem;
         animation-name: slide .5s ease;
+    }
+    .searchedarticle {
+        display: flex;
+        justify-content: space-evenly;
     }
 }
 

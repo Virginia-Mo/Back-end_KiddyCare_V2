@@ -35,7 +35,8 @@
     font-size: 3.5rem;
 }
 .blogarticle__image {
-    width: 100%;
+    max-width: 100%;
+    height: 20rem;
     border-radius: 0.5rem;
 }
 .blogarticle {
@@ -47,6 +48,11 @@
     background-color: var(--color-gray);
     margin-bottom: 4rem;
     padding-bottom: 3rem;
+    height: 50rem;
+}
+.article__text {
+    overflow: hidden;
+    height: 45rem;  
 }
 .blogarticle__img {
     width: 1.5rem;
@@ -142,6 +148,8 @@ height: 2rem;
 .blogarticle__image--detail1 {
    border-radius: 1rem;
    max-width: 100%;
+   height: 40rem;
+   margin: 0 auto;
 }
 .blogdetail__container, aside {
     padding: 2rem 10rem;
@@ -155,14 +163,16 @@ height: 2rem;
 }
 .blogarticle__image--detail2 {
     float: left;
-    width: 50%;
+    width: 30rem;
+    height: 22rem;
     border-radius: 2rem;
     margin-right: 2rem;
     margin-bottom: 1rem;
 }
 .blogarticle__image--detail3 {
     float: right;
-    width: 50%;
+    width: 30rem;
+    height: 22rem;
     border-radius: 2rem;
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -170,10 +180,23 @@ height: 2rem;
 .blogarticle__description-page {
     color: var(--color-graytext);
     line-height: 2.5rem;
+ 
 }
 .blogarticle__title-page {
     font-size:3rem;
     padding: 2rem 0;
+}
+.noArticle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5rem;
+}
+.tagTitle {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 5rem;
+    color: #138496;
 }
 .comment__userimg {
     border-radius: 50%;
@@ -185,7 +208,7 @@ height: 2rem;
 }
 .comment--writer {
     font-family: 'Handlee', cursive;
-
+    font-size: 2rem;
 }
 .datetime {
   color: var(--color-darkblue);  
@@ -249,12 +272,12 @@ height: 2rem;
 .blog__author-img {
     border-radius: 50%;
     max-width: 100%;
+    height: 20rem;
 }
 .blog__author--p {
     line-height: 2.5rem;
 }
 #search {
-    font-size: 1.rem;
     padding: 0.5rem 0.5rem 0.5rem 2rem;
     width: 80%;
     font-size: 1.7rem;
@@ -271,6 +294,9 @@ height: 2rem;
     color: var(--color-blue);
 }.search__form {
     display: flex;
+    width : 80%;
+    margin: 0 auto;
+    padding-top: 4rem;
 }
 .categories__links {
     display: flex;
@@ -294,15 +320,26 @@ height: 2rem;
     padding-bottom: 0;
     display: flex;
     width: 45rem;
-    height: 15rem;
+    height: auto;
 }
 .blogarticle__image--post {
     max-width: 100%;
+    height: 10rem;
+    width: 12rem;
 }
 .post__container {
     display: flex;
     flex-direction: column;
+    margin-left: 1rem;
 }
 .link_blog {
     text-decoration: none;
+}
+.error {
+    font-size: 3rem;
+    text-align: center;
+    padding: 4rem;
+}
+.searchedarticle {
+    padding: 5rem 2rem;
 }

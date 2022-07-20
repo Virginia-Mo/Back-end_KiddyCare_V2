@@ -17,9 +17,6 @@ Comment.init({
   },
   message : {
     type: DataTypes.TEXT
-  },
-  article_id : {
-      type : DataTypes.TEXT
   }
 }, {
   sequelize,

@@ -5,15 +5,17 @@
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
     <a href="/contact" class="navbar__links">Contact</a>
 </nav>
-<a href="/login">Log in</a>
-<a href="/classes" class="joinclass__btn">Join Class</a>
+<div class="navContainer">
+    <a href="/login" class="login">Log in</a>
+    <a href="/classes" class="joinclass__btn">Join Class</a>
+    </div>
 </header>
     <main class="maincontent">
         <section class="banner">
@@ -23,7 +25,7 @@
                 <p class="banner__description">Sea ipsum kasd eirmod kasd magna, est sea et diam ipsum est amet sed sit.
                     Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed ipsum at ipsum nonumy amet. Clita
                     lorem dolore sed stet et est justo dolore.</p>
-                <a href="about.html" class="banner__link-moreinfos">Learn more</a>
+                <a href="/about" class="banner__link-moreinfos">Learn more</a>
             </div>
             <div><img src="../img/header.png" alt="banner image" class="banner__image"></div>
         </section>
@@ -100,7 +102,7 @@
                         </div>
                     </div>
 
-                    <span><a href="about.html" class="aboutus__linkinfos">Learn More</a></span>
+                    <span><a href="/about" class="aboutus__linkinfos">Learn More</a></span>
                 </article>
             </section>
             <section class="classes">
@@ -130,7 +132,7 @@
                             <td class="table__td">$290 / Month</td>
                         </tr>
                     </table>
-                    <a href="#joinForm" class="joinclass__btn joinclass__btn--center">Join Now</a>
+                    <a href="/classes" class="joinclass__btn joinclass__btn--center">Join Now</a>
                 </article>
                 <article class="classescontent">
                     <img src="../img/class-2.jpg" alt="class2" class="classescontent__image">
@@ -155,7 +157,7 @@
                             <td class="table__td">$290 / Month</td>
                         </tr>
                     </table>
-                    <a href="#joinForm" class="joinclass__btn joinclass__btn--center">Join Now</a>
+                    <a href="/classes" class="joinclass__btn joinclass__btn--center">Join Now</a>
                 </article>
                 <article class="classescontent">
                     <img src="../img/class-3.jpg" alt="class3" class="classescontent__image">
@@ -180,7 +182,7 @@
                             <td class="table__td">$290 / Month</td>
                         </tr>
                     </table>
-                    <a href="#joinForm" class="joinclass__btn joinclass__btn--center">Join Now</a>
+                    <a href="/classes" class="joinclass__btn joinclass__btn--center">Join Now</a>
                 </article>
             </div>
             </section>
@@ -205,8 +207,8 @@
                 <div class="formcontainer from-right slide-in">
                     <h3 class="content__title content__subtitle--white">Book A Seat</h3>
                     <div class="bookingform">
-                        <p class="bookingform__input" >Dont wait and come join us in our diffedrent classes !</p>
-                        <button  class="bookingform__button"><a href="/classes">Book Now</a> </button></div>
+                        <p class="bookingform__text" >Don't wait and come join us in our different classes !</p>
+                        <button  class="bookingform__button"><a href="/classes" class="bookingform__a">Book Now</a> </button></div>
                     </form>
                 </div> 
             </section>
@@ -287,57 +289,80 @@
             <section class="blogcontent">
                 <h3 class="content__subtitle content__subtitle--border">Latest Blog</h3>
                 <h2 class="content__title content__title--size">Latest articles from our blog</h2>
-            <div class="article__container">
-                <article class="blogarticle">
-                    <img src="../img/blog-1.jpg" alt="blog1" class="blogarticle__image">
-                    <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                    <p class="blogarticle__details">
-                        <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
-                            class="admin">Admin</span>
-                        <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span
-                            class="webdesign">Web Design</span>
-                        <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span
-                            class="comments">15</span>
-                    </p>
-                    <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                        eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                        stet...</p>
-                    <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-                </article>
-                <article class="blogarticle">
-                    <img src="../img/blog-2.jpg" alt="blog2" class="blogarticle__image">
-                    <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                    <p class="blogarticle__details">
-                        <img src="../img/user.png" alt="user icon" class="blogarticle__img"><span
-                            class="admin">Admin</span>
-                        <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span
-                            class="webdesign">Web Design</span>
-                        <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span
-                            class="comments">15</span>
-                    </p>
-                    <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                        eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                        stet...</p>
-                    <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-                </article>
-                <article class="blogarticle">
-                    <img src="../img/blog-3.jpg" alt="blog3" class="blogarticle__image">
-                    <h3 class="blogarticle__title">Diam amet eos at no eos</h3>
-                    <p class="blogarticle__details">
-                        <img src="../img/user.png" alt="user icon" class="blogarticle__img">
-                        <span class="admin">Admin</span>
-                        <img src="../img/folder.png" alt="folder icon" class="blogarticle__img">
-                        <span class="webdesign">Web Design</span>
-                        <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img">
-                        <span class="comments">15</span>
-                    </p>
-                    <p class="blogarticle__description">Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                        eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet
-                        stet...</p>
-                    <a href="blogdetail.html" class="joinclass__btn joinclass__btn--center">Read More</a>
-                </article>
-            </div>
-            </section>
-        </div>
+                <div class="article__container">
+
+                    <% for (const article of articles){ %>         
+                            <article class="blogarticle">
+                                <div class="article__text">
+                               <div class="article__img"><img src="../uploads/<%=article.main_img%>" alt="blog1" class="blogarticle__image"></div> 
+                                <h3 class="blogarticle__title"><%=article.maintitle%></h3>
+                                <p class="blogarticle__description"><%=article.introduction%></p></div>
+                                <a href="/blogdetails/<%=article.id%>" class="joinclass__btn joinclass__btn--center">Read More</a>
+                            </article>
+                        <%}%>
     </main>
-    <%-include ("partials/footer")%>
+    <footer class="footer">
+        <div class="footer__container">
+           <div class="footer__container-box footer__container-box--top">
+             <div class="logo"><img src="../img/people.png" alt="logo" class="logo__image"><span
+                     class="logo__title logo__title--footer">KiddyCare</span></div>
+             <p class="footer__school-description">Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea
+                 dolor et magna dolor, elitr rebum duo est sed diam elitr. Stet elitr stet diam duo eos rebum ipsum diam
+                 ipsum elitr.</p>
+             <a href="https://twitter.com/" class="footer__school-medialink" target="blank"><img src="../img/twitter.png"
+                     alt="twitter" class="mediaimg"></a>
+             <a href="https://fr-fr.facebook.com/" class="footer__school-medialink" target="blank"><img src="../img/facebook.png"
+                     alt="facebook" class="mediaimg"></a>
+             <a href="https://www.snapchat.com/" class="footer__school-medialink" target="blank"><img src="../img/snapchat.png"
+                     alt="facebook" class="mediaimg"></a>
+             <a href="https://www.instagram.com/" class="footer__school-medialink" target="blank"><img src="../img/instagram.png"
+                     alt="facebook" class="mediaimg"></a>
+         </div>
+         <div class="footer__container-box">
+             <h2 class="footer__title">Get in Touch</h2>
+             <div class="footer__contact-content">
+                 <div class="footer__contact-img"><img src="../img/epingle.png" alt="map pin" class="footer__image"></div>
+                 <div class="details-container"><span class="footer__contact--details">Address</span> <span
+                     class="schooladdress">123 Street, New York, USA</span></div>
+                 </div>
+             <div class="footer__contact-content">
+                 <div class="footer__contact-img"><img src="../img/enveloppe.png" alt="email" class="footer__image"></div>
+                 <div class="details-container"> <span class="footer__contact--details">Email</span><span
+                     class="schoolemail">info@example.com</span></div>
+                 </div>
+             <div class="footer__contact-content">
+                 <div class="footer__contact-img"><img src="../img/phone.png" alt="phone" class="footer__image"></div>
+                 <div class="details-container"><span class="footer__contact--details">Phone</span><span
+                     class="schoolphone">+012 345 67890</span></div>
+         </div>
+     </div>
+         <div class="footer__container-box">
+             <h2 class="footer__title">Quick Link</h2>
+             <a href="/" class="footer__links"> &#8250; Home</a>
+             <a href="/about" class="footer__links">&#8250; About Us</a>
+             <a href="/classes" class="footer__links">&#8250; Our Classes</a>
+             <a href="/teachers" class="footer__links">&#8250; Our Teachers</a>
+             <a href="/pages" class="footer__links">&#8250; Our Blog</a>
+             <a href="/contact" class="footer__links">&#8250; Contact Us</a>
+         </div>
+         <div class="footer__container-box">
+             <h2 class="footer__title">Newsletter</h2>
+             <form method="POST" class="newsletterform">
+                 <input type="text" name="nameRequest" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter">
+                 <input type="email" name="emailRequest" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter">
+                 <button type="submit" class="button--blue requestNL">Submit Now</button>
+             </form>
+         </div>
+    
+     </div>
+             <div class="copyrights">
+             <p> © Kiddy Care. All Rights Reserved. Designed by HTML Codex</p>
+             <p>Icons found in <a href="https://www.flaticon.com/" class="copyrights__links">Flat Icon</a> </p>
+                     <p>You can find all the credits to authors here : <a href="/copyrights" class="copyrights__links"> Copyrights</a></p>
+             </div>
+     </footer>
+     <script src="../js/script.js" defer></script>
+     <script src="../js/carousel.js" defer></script>
+    </body>
+    
+    </html>

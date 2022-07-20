@@ -31,6 +31,18 @@ body {
     font-weight: bold;
     display: inline-block;
 }
+.login {
+    margin: auto;
+    text-decoration: none;
+    color: #00394f;
+}
+.login:visited {
+    color:#001d29
+}
+.navContainer {
+    display: flex;
+    gap: 2rem;
+}
 /* ---------------------------------HEADER---------------------------- */
 
 .logo {
@@ -190,7 +202,34 @@ body {
     width:2rem;
     height:2rem;
 }
+.navContainer{    
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+/* ---------COPYRIGHTS------------------ */
+.cplist {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 4rem;
+}
+.cplink {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 2.5rem;
+    font-style: italic;
 
+}
+.cplink:visited {
+    color: var(--color-darkbluebtn);
+}
+.FAList {
+    padding: 1rem 0 0 3rem;
+}
+.FAList_li {
+    padding: 0.5rem;
+}
 /* -------TESTIMONIAL------------------ */
 .parents__speech {
     background-color: var(--color-gray);
@@ -374,4 +413,11 @@ body {
 .copyrights__links {
   text-decoration: none;
   color: var(--color-blue);  
+}
+.inputLabel {
+   padding-bottom: 1rem;
+   font-size: 2rem
+}
+.inputLogin {
+    padding: 0.5rem;
 }

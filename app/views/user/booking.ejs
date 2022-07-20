@@ -1,41 +1,49 @@
-
 <%-include ("../partials/headUser")%> 
 
-<h1>Bookings</h1>
+<h1 class="adminPage__maintitle">Bookings</h1>
 
-<div class="container" style= "display : flex">
-
-    <h2>Drawing Class</h2>
+<div class="book_container">
+    <div class="bookingContainer">
+    <h2 class="className">Drawing Class</h2>
+    <div class="flex">
 <% for(const booking of bookings){ 
     if(booking.class == 1) {%>
-<div class="message_container">
-    <p>Name : <%= booking.name %> </p>
-    <p>Email: <%= booking.email %> </p>
-    <p>Created at : <%= booking.createdAt %> </p>
-    <a href="/admin/removebooking/<%=booking.id%>">Remove</a>
+<div class="message">
+    <p class="inputs"><span class="inputs__span">Name :</span> <%= booking.name %> </p>
+    <p class="inputs"><span class="inputs__span">Email:</span> <%= booking.email %> </p>
+    <p class="inputs"><span class="inputs__span">Created at :</span> <%= booking.createdAt %> </p>
+     <div class="removelink"><a href="/admin/removebooking/<%=booking.id%>" class="removelink__a">Remove</a></div>
 </div>
+
   <%}}%>
-   <h2>Language Class</h2>
-   <% for(const booking of bookings){
+</div></div>
+
+<div class="bookingContainer">
+   <h2 class="className">Language Class</h2> 
+   <div class="flex">
+ <% for(const booking of bookings){
   if(booking.class == 2) {%>
-   
-<div class="message_container">
-    <p>Name : <%= booking.name %> </p>
-    <p>Email: <%= booking.email %> </p>
-    <p>Created at : <%= booking.createdAt %> </p>
-    <a href="/admin/removebooking/<%=booking.id%>">Remove</a>
+<div class="message">
+    <p class="inputs"><span class="inputs__span">Name :</span> <%= booking.name %> </p>
+    <p class="inputs"><span class="inputs__span">Email:</span> <%= booking.email %> </p>
+    <p class="inputs"><span class="inputs__span">Created at :</span> <%= booking.createdAt %> </p>
+     <div class="removelink"><a href="/admin/removebooking/<%=booking.id%>" class="removelink__a">Remove</a></div>
 </div>  <%}}%>
- <h2>Science Class</h2>
+</div>
+</div>
+<div class="bookingContainer">
+ <h2 class="className">Science Class</h2>
+ <div class="flex">
  <% for(const booking of bookings){
   if(booking.class == 3) {%>
     
-
-<div class="message_container">
-    <p>Name : <%= booking.name %> </p>
-    <p>Email: <%= booking.email %> </p>
-    <p>Created at : <%= booking.createdAt %> </p>
-    <a href="/admin/removebooking/<%=booking.id%>">Remove</a>
+<div class="message">
+    <p class="inputs"><span class="inputs__span">Name :</span> <%= booking.name %> </p>
+    <p class="inputs"><span class="inputs__span">Email:</span> <%= booking.email %> </p>
+    <p class="inputs"><span class="inputs__span">Created at :</span> <%= booking.createdAt %> </p>
+     <div class="removelink"><a href="/admin/removebooking/<%=booking.id%>" class="removelink__a">Remove</a></div>
 </div>
-  <%}
- } %> 
+  <%} } %> 
+</div>
+</div>
 </div>

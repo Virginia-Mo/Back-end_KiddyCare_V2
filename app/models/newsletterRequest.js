@@ -15,13 +15,6 @@ NewsletterRequest.init({
       isEmail: true, 
     }
   },
-  user_id : {
-    type : DataTypes.INTEGER,
-    references : {
-      model : User,
-      key: "id",
-    }
-  }
 }, {
   sequelize,
   tableName: "newsletterRequest"

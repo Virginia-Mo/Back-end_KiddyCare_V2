@@ -1,13 +1,20 @@
-
 <%-include ("../partials/headUser")%> 
 
-<h1>Articles</h1>
+<h1 class="adminPage__maintitle">Articles</h1>
+<div class="message_container">
 
-<div class="container" style= "display : flex">
-
-
-<% for(const article of articles){ %>
-<li><%=article.maintitle%></li>
-<a href="/user/removearticle/<%=article.id%>">Remove</a>
-<%    } %> 
+<% for(const article of articles){ 
+    if (article.id == 5 || article.id == 6 || article.id == 5 || article.id == 7 || article.id == 8 || article.id == 9 ) {%>
+    <div class="message">
+        <p class="inputs"><span class="inputs__span">Article name :</span><%=article.maintitle%></p>
+        <br>
+        <p>&#10008 Article not removable &#10008</p>
+      </div> 
+      <% }else { %>
+        <div class="message">
+        <p class="inputs"><span class="inputs__span">Article name :</span><%=article.maintitle%></p>
+            <div class="removelink"><a href="/user/removearticle/<%=article.id%>" class="removelink__a">Remove</a></div>
+      </div>      
+     <% }     
+    } %> 
 </div>

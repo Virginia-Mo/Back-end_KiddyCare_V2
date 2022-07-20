@@ -1,12 +1,13 @@
-<%-include ("../partials/header")%>
 <%-include ("../partials/headUser")%> 
 
-<h1>Newsletter Requests</h1>
+<h1 class="adminPage__maintitle">Newsletter Requests</h1>
+<div class="message_container">
 <% for(const request of requests){ %> 
-<div class="request_container">
-    <p>Name : <%= request.name %> </p>
-    <p>Email: <%= request.email %> </p>
-    <p>Created at : <%= request.createdAt %> </p>
-    <a href="/admin/removerequest/<%=request.id%>">Remove</a>
+<div class="message">
+     <p class="inputs"><span class="inputs__span">Name :</span> <%= request.name %> </p>
+     <p class="inputs"><span class="inputs__span">Email: </span><%= request.email %> </p>
+     <p class="inputs"><span class="inputs__span">Created at :</span> <%= request.createdAt %> </p>
+     <div class="removelink"><a href="/admin/removerequest/<%=request.id%>" class="removelink__a">Remove</a></div>
 </div>
 <% } %> 
+</div>

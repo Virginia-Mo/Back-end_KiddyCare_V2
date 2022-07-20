@@ -1,13 +1,21 @@
-
 <%-include ("../partials/headUser")%> 
 
-<h1>Comments</h1>
+<h1 class="adminPage__maintitle">Comments</h1>
+<div class="message_container">
 
-<div class="container" style= "display : flex">
+<% for(const comment of comments){ 
+    if (comment.id == 37 || comment.id == 39 ||comment.id == 40 ){ %>
+ <div class="message">
+    <p class="inputs"><span class="inputs__span"><%=comment.name%>, <%=comment.email%> : </span> <%=comment.message%></p>
+    <br>
+    <p>&#10008 Comment not removable &#10008</p>    
+</div>
+<%} else {%>
+    <div class="message">
+    <p class="inputs"><span class="inputs__span"><%=comment.name%>, <%=comment.email%> : </span> <%=comment.message%></p>
+    <div class="removelink"><a href="/user/removecomment/<%=comment.id%>" class="removelink__a">Remove</a></div>
+</div>
+<%}
+ } %> 
 
-
-<% for(const comment of comments){ %>
-<li><%=comment.name%>, <%=comment.email%> : <%comment.message%></li>
-<a href="/user/removecomment/<%=comment.id%>">Remove</a>
-<%    } %> 
 </div>

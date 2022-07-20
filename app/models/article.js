@@ -40,21 +40,6 @@ Article.init({
   authorjob: {
     type : DataTypes.TEXT
   },
-  tag_id : {
-    type : DataTypes.INTEGER,
-    references : {
-      model : Tag,
-      key: "id" ,
-    }
-  },
-  user_id : {
-    type : DataTypes.INTEGER,
-    references : {
-      model : User,
-      key: "id",
-    }
-  },
-
 }, {
   sequelize,
   tableName: "article"

@@ -1,49 +1,79 @@
-<%-include ("../partials/header")%>
-<%-include ("../partials/headUser")%> 
+<%-include ("../partials/headUser")%>
 
-<form action="" method="POST" enctype="multipart/form-data">
-    <label for="maintitle">Main Title</label>
-    <input type="text" name="maintitle">
+<h1 class="adminPage__maintitle">Create an Article</h1>
 
-    <label for="mainimg">Main Image</label>
-    <input type="file" name="mainimg">
+<form action="" method="POST" enctype="multipart/form-data" class="formArticle">
 
-    <label for="description">Introduction</label>
-    <textarea name="introduction" id="" cols="30" rows="10"></textarea>
-    
-    <label for="title1">First Title</label>
-    <input type="text" name="title1">
-    
-    <label for="img1">First image</label>
-    <input type="file" name="img1">
+    <div class="formArticle__div">
+        <label for="maintitle">Main Title</label>
+        <input type="text" name="maintitle" required>
+    </div>
 
-        
-    <label for="description1">First Description</label>
-    <textarea name="description1" id="" cols="30" rows="10"></textarea>
-        
-    <label for="title2">Second Title</label>
-    <input type="text" name="title2">
-    
-    <label for="img2">Second image</label>
-    <input type="file" name="img2">
-       
-    <label for="description2">Second Description</label>
-    <textarea name="description2" id="" cols="30" rows="10"></textarea>
+    <div class="formArticle__div">
+        <label for="mainimg">Main Image</label>
+        <input type="file" name="mainimg" required>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="description">Introduction</label>
+        <textarea name="introduction" id="" cols="30" rows="10" required></textarea>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="title1">First Title</label>
+        <input type="text" name="title1" required>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="img1">First image</label>
+        <input type="file" name="img1" required>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="description1">First Description</label>
+        <textarea name="description1" id="" cols="30" rows="10" required></textarea>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="title2">Second Title</label>
+        <input type="text" name="title2" required>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="img2">Second image</label>
+        <input type="file" name="img2" required>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="description2">Second Description</label>
+        <textarea name="description2" id="" cols="30" rows="10" required></textarea>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="tag">Tag</label>
+        <select name="tag" id="tag" required>
+            <option value="1">Arts at school</option>
+            <option value="2">Sports</option>
+            <option value="3">Events</option>
+            <option value="4">Homework Methodology</option>
+        </select>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="profile">Your photo</label>
+        <input type="file" name="profile" required>
+    </div>
+
+    <div class="formArticle__div">
+        <label for="name">Your name</label>
+        <input type="text" name="name" required>
+    </div>
+
+    <div class="formArticle__div"> <label for="job">Your job</label>
+        <input type="text" name="job" required>
+    </div>
 
 
-    <label for="tag">Tag</label>
-    <select name="tag" id="tag">
-        <option value="1">Arts at school</option>
-        <option value="2">Sports</option>
-        <option value="3">Events</option>
-        <option value="4">Homework Methodology</option>
-    </select>
-    <label for="profile">Your photo</label>
-    <input type="file" name="profile">
-    <label for="name">Your name</label>
-    <input type="text" name="name">
-    <label for="job">Your job</label>
-    <input type="text" name="job">
+   <div class="buttonDiv" ><button type="submit" class="createButton">Create</button></div>
 
-    <button type="submit">Créer</button>
 </form>

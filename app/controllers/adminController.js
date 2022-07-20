@@ -7,9 +7,7 @@ const {
 const adminController = {
     getMessage: async (req, res) => {
         try {
-
             const messageData = req.body;
-
             const newMessage = await Message.create({
                 name: messageData.name,
                 email: messageData.email,
@@ -24,18 +22,17 @@ const adminController = {
             res.status(500).send("Server error")
         }
     },
-    removeMessage: async (req, res, next) => {
+    removeMessage: async (req, res) => {
         const id = req.params.id;
         try {
             const removedMessage = await Message.destroy({
                 where: {
                     id: id
                 }
-            })
-            if (removedMessage) {
-               next()
-            }
-            
+         })
+        if (removedMessage) {
+            res.redirect("/user")
+            } 
         } catch (error) {
             res.status(500).send("Server error")
         }
@@ -43,7 +40,6 @@ const adminController = {
     getMessagePage: async (req, res) => {
         try {
             const messages = await Message.findAll();
-            console.log(messages)
             res.render("user/message", {
                 messages
             })
@@ -72,7 +68,7 @@ const adminController = {
             res.status(500).send("Server error")
         }
     },
-    removeBooking: async (req, res, next) => {
+    removeBooking: async (req, res) => {
         const id = req.params.id;
         try {
             const removedBooking = await Classbooking.destroy({
@@ -81,7 +77,7 @@ const adminController = {
                 }
             })
             if (removedBooking) {
-               next()
+                res.redirect("/user")
             }
             
         } catch (error) {
@@ -105,21 +101,20 @@ const adminController = {
         try {
 
             const requestData = req.body;
-
             const newrequest = await NewsletterRequest.create({
                 name: requestData.nameRequest,
                 email: requestData.emailRequest,
                 user_id: 1,
             })
-            console.log(newrequest)
+
             if (newrequest) {
-                res.render("home")
+               res.redirect("/")
             }
         } catch (error) {
             res.status(500).send("Server error")
         }
     },
-    removeNewsletterRequest: async (req, res, next) => {
+    removeNewsletterRequest: async (req, res) => {
         const id = req.params.id;
         try {
             const removedNewsletterRequest = await NewsletterRequest.destroy({
@@ -128,7 +123,8 @@ const adminController = {
                 }
             })
             if (removedNewsletterRequest) {
-              next()
+                const requests = await NewsletterRequest.findAll();
+                res.redirect("/user")
             }
             
         } catch (error) {

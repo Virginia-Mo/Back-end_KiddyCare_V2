@@ -1,13 +1,16 @@
-const {
-  Article, Comment } = require("../models");
+const { Article, Comment } = require("../models");
 
 const userController = {
   getPage(req, res) {
     res.render("user/user");
   },
-  logout(req, res) {
+  logout: async (req,res) => {
     delete req.session.user;
-    res.render("home");
+    const articles = await Article.findAll({
+      limit : 3, 
+      order : [['createdAt', 'DESC']], 
+      });
+    res.render("home", {articles});
   },
   getCreateArticlePage(req, res) {
     res.render("user/createArticle");
@@ -39,22 +42,25 @@ const userController = {
         user_id: req.session.user.id,
       });
       if (article) {
-      next()
-    }
+     res.redirect("/user")
+    } 
     } catch (error) {
       res.status(500).send("Server problem")
     }
   },
-  removeArticle: async (req, res, next) => {
-    const id = req.params.id;
+  removeArticle: async (req, res) => {
     try {
+      const id = req.params.id;
+      const comments = await Comment.destroy({where : {
+        article_id : id
+      }})
       const removedArticle = await Article.destroy({
         where: {
           id: id
         }
       })
       if (removedArticle) {
-        next()
+        res.redirect("/user")
       }
 
     } catch (error) {
@@ -65,7 +71,7 @@ const userController = {
     const comments = await Comment.findAll();
     res.render("user/comments", {comments})
   },
-  removeComment: async (req, res, next) => {
+  removeComment: async (req, res) => {
     const id = req.params.id;
     try {
       const removedComment = await Comment.destroy({
@@ -74,7 +80,7 @@ const userController = {
         }
       })
       if (removedComment) {
-        next()
+       res.redirect("/user")
       }
 
     } catch (error) {

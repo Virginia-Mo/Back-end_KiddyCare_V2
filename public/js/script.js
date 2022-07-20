@@ -67,5 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return;
   };
-
+//
+  function confirmRequest(){
+    let btn = document.querySelector(".requestNL");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault,
+      btn.textContent= " Thank you for the request, you successfully subscribed to our NewsLetter !";
+    })
+  };
 });

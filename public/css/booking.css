@@ -57,7 +57,18 @@
 }
 .bookingform__button:hover {
     background-color: var(--color-darkbluebtn);
-
+}
+.bookingform__a:visited {
+    color: var(--color-white);
+}
+.bookingform__a {
+    text-decoration: none;
+}
+.bookingform__text {
+    color: var(--color-white);
+    line-height: 3rem;
+    text-align: center;
+    font-size: 2rem;
 }
 .bookingform__input {
     width: 100%;

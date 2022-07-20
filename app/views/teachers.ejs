@@ -5,15 +5,17 @@
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="blue-link">Teachers</a>
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
     <a href="/contact" class="navbar__links">Contact</a>
 </nav>
-<a href="/login">Se connecter</a>
-<a href="/classes" class="joinclass__btn">Join Class</a>
+<div class="navContainer">
+    <a href="/login" class="login">Log in</a>
+    <a href="/classes" class="joinclass__btn">Join Class</a>
+    </div>
 </header>
 
 <main class="maincontent">
@@ -27,7 +29,7 @@
         <section class="teacherslist">
             <h3 class="content__subtitle content__subtitle--border">Our teachers</h3>
             <h2 class="content__title content__title--center">Meet Our Teachers</h2>
-            <div class="teachers__container  animate__animated animate__zoomIn animate__slow ">
+            <div class="teachers__container  animate__animated animate__fadeInUp animate__slow ">
             <div class="teachers ">
                 <img src="../img/team-1.jpg" alt="Julia" class="teachers__image">
                 <span class="teachers__name">Julia Smith</span>
@@ -49,22 +51,22 @@
                 <span class="teachers__spe">Art Teacher</span>
             </div>
             <div class="teachers">
-                <img src="../img/team-1.jpg" alt="Julia" class="teachers__image">
+                <img src="../img/team-2.jpg" alt="Julia" class="teachers__image">
                 <span class="teachers__name">Julia Smith</span>
                 <span class="teachers__spe">Music Teacher</span>
             </div>
             <div class="teachers">
-                <img src="../img/team-2.jpg" alt="Tom" class="teachers__image">
+                <img src="../img/team-3.jpg" alt="Tom" class="teachers__image">
                 <span class="teachers__name">Tom Doe</span>
                 <span class="teachers__spe">Language Teacher</span>
             </div>
             <div class="teachers">
-                <img src="../img/team-3.jpg" alt="Molly" class="teachers__image">
+                <img src="../img/team-4.jpg" alt="Molly" class="teachers__image">
                 <span class="teachers__name">Molly Ross</span>
                 <span class="teachers__spe">Dance Teacher</span>
             </div>
             <div class="teachers">
-                <img src="../img/team-4.jpg" alt="David" class="teachers__image">
+                <img src="../img/team-1.jpg" alt="David" class="teachers__image">
                 <span class="teachers__name">David Robert</span>
                 <span class="teachers__spe">Art Teacher</span>
             </div></div>
@@ -118,4 +120,4 @@
         </section>
     </div>
    
-    <%-include ("partials/footer")%>
+    <%-include ("partials/footer2")%>

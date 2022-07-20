@@ -1,7 +1,6 @@
-<%-include ("../partials/header")%>
 <%-include ("../partials/headUser")%> 
-<h1>Welcome <%=locals.user.name%> </h1>
-<% if (locals.user.name === 'teacherkdc'){%> 
+<h1 class="adminPage__title">Welcome <%=locals.user.name%> </h1>
+<% if (locals.user.name === 'teacherKDC'){%> 
 
-<p>Feel free to update the school blog when you want ! </p>
+<p class="adminPage__text" >Feel free to update the school blog when you want ! </p>
 <% } %>

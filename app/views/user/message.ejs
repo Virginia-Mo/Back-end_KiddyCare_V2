@@ -1,14 +1,15 @@
-<%-include ("../partials/header")%>
 <%-include ("../partials/headUser")%> 
 
-<h1>Messages</h1>
-<% for(const message of messages){ %> 
+<h1 class="adminPage__maintitle">Messages</h1>
 <div class="message_container">
-    <p>Name : <%= message.name %> </p>
-    <p>Email: <%= message.email %> </p>
-    <p>Subject :<%= message.subject %> </p>
-    <p>Message:<%= message.message %> </p>
-    <p>Created at : <%= message.createdAt %> </p>
-    <a href="/admin/removemessage/<%=message.id%>">Remove</a>
+<% for(const message of messages){ %> 
+<div class="message">
+    <p class="inputs"><span class="inputs__span">Name :</span> <%= message.name %> </p>
+    <p class="inputs"><span class="inputs__span">Email :</span>  <%= message.email %></p>
+    <p class="inputs"><span class="inputs__span">Subject :</span> <%= message.subject %></p>
+    <p class="inputs"><span class="inputs__span">Message :</span>  <%= message.message %> </p>
+    <p class="inputs"><span class="inputs__span">Created at :</span>  <%= message.createdAt %></p>
+    <div class="removelink"><a href="/admin/removemessage/<%=message.id%>" class="removelink__a">Remove</a></div>
 </div>
 <% } %> 
+</div>

@@ -5,21 +5,22 @@
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="blue-link" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages<i class="fa-solid fa-caret-down pageMenu"></i></span>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
-    
     <a href="/contact" class="navbar__links">Contact</a>
 </nav>
-<a href="/login">Log in</a>
-<a href="/classes" class="joinclass__btn">Join Class</a>
+<div class="navContainer">
+    <a href="/login" class="login">Log in</a>
+    <a href="/classes" class="joinclass__btn">Join Class</a>
+    </div>
 </header>
 <main class="maincontent">
     <section class="banner banner__pages">
         <div class="banner__part1">
             <h1 class="banner__title">Gallery</h1>
-            <p class="banner__description banner__description--pages"><a href="index.html" class="banner__link">
+            <p class="banner__description banner__description--pages"><a href="/" class="banner__link">
                     Home</a> / Our Gallery</p>
         </div>
     </section>
@@ -69,4 +70,4 @@
         </section>
     </div>
 </main>
-<%-include ("partials/footer")%>
+<%-include ("partials/footer2")%>
