@@ -126,7 +126,8 @@ const mainController = {
 
        try {
       const title = data.search.trim();
-      const results = await Article.findAll({
+      results = await Article.findAll({
+        include : ["tag", "comments"],
         where : { 
         [Op.or] : [
         {

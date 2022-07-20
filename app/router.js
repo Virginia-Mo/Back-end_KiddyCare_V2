@@ -55,7 +55,7 @@ router.get("/login", loginController.login);
 router.post("/login", loginController.checkin);
 
 router.get("/user",checkedLogged, userController.getPage);
-router.get("/logout", checkedLogged, userController.logout);
+router.get("/logout", checkedLogged, loginController.logout);
 
 router.get("/admin/message", checkedLogged, adminController.getMessagePage);
 router.get("/admin/removemessage/:id", checkedLogged, adminController.removeMessage);

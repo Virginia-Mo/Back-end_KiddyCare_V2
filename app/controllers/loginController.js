@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const {User, Article} = require('../models');
 const bcrypt = require('bcrypt');
 
 const userController = {
@@ -56,7 +56,16 @@ const userController = {
     } catch (error) {
         res.status(500).send("Server Error")
     }
-    }
+    },
+    logout: async (req,res) => {
+        delete req.session.user;
+        const articles = await Article.findAll({
+          include : ["tag", "comments"],
+          limit : 3, 
+          order : [['createdAt', 'DESC']], 
+          });
+        res.render("home", {articles});
+      },
 }
 
 

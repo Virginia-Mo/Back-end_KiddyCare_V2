@@ -42,6 +42,10 @@
                     class="blogarticle__image">
             </div>
             <h3 class="blogarticle__title"><%=article.maintitle%></h3>
+            <p class="blogarticle__details-page">
+                <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span class="webdesign"><%=article.tag.name%></span>
+                <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span class="webdesign"><%=article.comments.length%></span>                   
+        </p>
             <p class="blogarticle__description"><%=article.introduction%></p>
         </div>
         <a href="/blogdetails/<%=article.id%>" class="joinclass__btn joinclass__btn--center">Read More</a>

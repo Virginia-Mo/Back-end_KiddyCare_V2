@@ -4,14 +4,6 @@ const userController = {
   getPage(req, res) {
     res.render("user/user");
   },
-  logout: async (req,res) => {
-    delete req.session.user;
-    const articles = await Article.findAll({
-      limit : 3, 
-      order : [['createdAt', 'DESC']], 
-      });
-    res.render("home", {articles});
-  },
   getCreateArticlePage(req, res) {
     res.render("user/createArticle");
   },
