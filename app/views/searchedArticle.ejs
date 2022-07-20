@@ -32,8 +32,10 @@
     <h2 class="content__title content__title--size left"><%=foundArticle.maintitle %> </h2>
  <div class="article__container">
     <article class="blogarticle--page">
-        <p class="blogarticle__details-page">
-
+            <p class="blogarticle__details-page">
+                <img src="../img/folder.png" alt="folder icon" class="blogarticle__img"><span class="webdesign"><%=foundArticle.tag.name%></span>
+                <img src="../img/bubble-chat.png" alt="comment icon" class="blogarticle__img"><span class="webdesign"><%=comments.length%></span>                   
+        </p>
                
         </p>
         <img src="../uploads/<%=foundArticle.main_img%>" alt="blog1" class="blogarticle__image--detail1">
@@ -104,7 +106,7 @@
     <section class="categories">
     <h2 class="content__title">Categories</h2>
     <ul><% for (const tag of tags){%>
-    <li class="list-elem"><a href="/tag/<%=tag.id%>" class="categories__links"><%=tag.name%></a></li>
+    <li class="list-elem"><a href="/tag/<%=tag.id%>" class="categories__links"><%=tag.name%><span class="numberCat"><%=tag.article.length%></span></a></li>
     <% }%>
     </ul>
     

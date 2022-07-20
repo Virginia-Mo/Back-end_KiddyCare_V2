@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 const mainController = {
     homePage: async (req,res) => {
       const articles = await Article.findAll({
+        include : ["tag","comments"],
         limit : 3, 
         order : [['createdAt', 'DESC']], 
         });
@@ -23,27 +24,27 @@ const mainController = {
     },
     pagesPage : async(req,res) => {
       try {
-      const articles = await Article.findAll({order : [['createdAt', 'DESC']]});
+      const articles = await Article.findAll({include : ["tag","comments"], order : [['createdAt', 'DESC']]});
       res.render("pages", {articles});
     } catch (error) {
-      res.status(500).send("Server problem")
+      res.status(500).send("Server Error")
     }
     },
     blogDetailsPage: async(req,res)=> {
       try {
-      const tags = await Tag.findAll();
+      const tags = await Tag.findAll({include : "article"});
       
-      const newArticle = await Article.findOne({order : [['createdAt', 'DESC']]});
+      const newArticle = await Article.findOne({include : "tag", order : [['createdAt', 'DESC']]});
 
       const articles = await Article.findAll({
         limit : 3, 
-        order : [['createdAt', 'DESC']], 
+        order : [['createdAt', 'DESC']],
         });
       const comments = await Comment.findAll({where :{ article_id : newArticle.id}});
 
       res.render("blogDetails", {newArticle, tags, articles, comments});
     } catch (error) {
-      res.status(500).send("Server problem")
+      res.status(500).send("Server Error")
     }
     },
     getCommentsDetailPage : async (req,res,next) => {
@@ -61,25 +62,25 @@ const mainController = {
        if(newcomment){
           next()
      }} catch (error) {
-      res.status(500).send("Server problem")
+      res.status(500).send("Server Error")
      }
     },
     searchedArticle : async (req,res) => {
       try {
       const articleid = req.params.id;
     
-      const tags = await Tag.findAll()
+      const tags = await Tag.findAll({include : "article"})
       const articles = await Article.findAll({
         limit : 3, 
         order : [['createdAt', 'DESC']],
         });
     
-      const foundArticle = await Article.findByPk(articleid);
+      const foundArticle = await Article.findByPk(articleid, {include : "tag"});
       const comments = await Comment.findAll({where :{ article_id : articleid}})
 
       res.render("searchedArticle", {foundArticle, comments, articles, tags}) 
     } catch (error){
-      res.status(500).send("Problem")
+      res.status(500).send("Server Error")
     }
     },
     showArticlebyTag : async (req,res) => {
@@ -91,7 +92,7 @@ const mainController = {
       res.render("tags", {foundarticles, tag})
 
     } catch (error){
-      res.status(500).send("Server problem")
+      res.status(500).send("Server Error")
     }
     },
     getComments : async (req,res, next) => {
@@ -148,7 +149,7 @@ const mainController = {
       res.render("search", {results})
 
      } catch (error) {
-      res.status(500).send("Server Problem")
+      res.status(500).send("Server Error")
     }
     
   }

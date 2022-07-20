@@ -45,7 +45,7 @@ const userController = {
      res.redirect("/user")
     } 
     } catch (error) {
-      res.status(500).send("Server problem")
+      res.status(500).send("Server error")
     }
   },
   removeArticle: async (req, res) => {
