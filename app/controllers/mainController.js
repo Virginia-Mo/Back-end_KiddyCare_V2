@@ -66,8 +66,11 @@ const mainController = {
      }
     },
     searchedArticle : async (req,res) => {
+      const articleid = +req.params.id;
+      if (isNaN(articleid)) {
+        return res.send("Invalid list id")
+      }
       try {
-      const articleid = req.params.id;
     
       const tags = await Tag.findAll({include : "article"})
       const articles = await Article.findAll({
@@ -84,7 +87,10 @@ const mainController = {
     }
     },
     showArticlebyTag : async (req,res) => {
-      const tagId = req.params.id;
+      const tagId = +req.params.id;
+      if (isNaN(tagId)) {
+        return res.send("Invalid list id")
+      }
       try {
       const foundarticles = await Article.findAll({where: { tag_id : tagId}});
       const tag = await Tag.findByPk(tagId);

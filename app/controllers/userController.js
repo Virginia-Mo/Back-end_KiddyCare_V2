@@ -41,8 +41,11 @@ const userController = {
     }
   },
   removeArticle: async (req, res) => {
+    const id = +req.params.id;
+    if (isNaN(id)) {
+      return res.send("Invalid list id")
+    }
     try {
-      const id = req.params.id;
       const comments = await Comment.destroy({where : {
         article_id : id
       }})
@@ -53,6 +56,8 @@ const userController = {
       })
       if (removedArticle) {
         res.redirect("/user")
+      } else {
+        res.send("Nothing has been removed")
       }
 
     } catch (error) {
@@ -64,7 +69,10 @@ const userController = {
     res.render("user/comments", {comments})
   },
   removeComment: async (req, res) => {
-    const id = req.params.id;
+    const id = +req.params.id;
+    if (isNaN(id)) {
+      return res.send("Invalid list id")
+    }
     try {
       const removedComment = await Comment.destroy({
         where: {
@@ -73,6 +81,8 @@ const userController = {
       })
       if (removedComment) {
        res.redirect("/user")
+      } else {
+        res.send("Nothing has been removed")
       }
 
     } catch (error) {

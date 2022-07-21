@@ -23,7 +23,10 @@ const adminController = {
         }
     },
     removeMessage: async (req, res) => {
-        const id = req.params.id;
+      const id = +req.params.id;
+      if (isNaN(id)) {
+        return res.send("Invalid list id")
+      }
         try {
             const removedMessage = await Message.destroy({
                 where: {
@@ -32,7 +35,9 @@ const adminController = {
          })
         if (removedMessage) {
             res.redirect("/user")
-            } 
+          } else {
+                res.send("Nothing has been removed")
+              }
         } catch (error) {
             res.status(500).send("Server error")
         }
@@ -69,7 +74,10 @@ const adminController = {
         }
     },
     removeBooking: async (req, res) => {
-        const id = req.params.id;
+      const id = +req.params.id;
+      if (isNaN(id)) {
+        return res.send("Invalid list id")
+      }
         try {
             const removedBooking = await Classbooking.destroy({
                 where: {
@@ -78,7 +86,9 @@ const adminController = {
             })
             if (removedBooking) {
                 res.redirect("/user")
-            }
+            } else {
+                res.send("Nothing has been removed")
+              }
             
         } catch (error) {
             res.status(500).send("Server error")
@@ -115,7 +125,10 @@ const adminController = {
         }
     },
     removeNewsletterRequest: async (req, res) => {
-        const id = req.params.id;
+      const id = +req.params.id;
+      if (isNaN(id)) {
+        return res.send("Invalid list id")
+      }
         try {
             const removedNewsletterRequest = await NewsletterRequest.destroy({
                 where: {
@@ -125,7 +138,9 @@ const adminController = {
             if (removedNewsletterRequest) {
                 const requests = await NewsletterRequest.findAll();
                 res.redirect("/user")
-            }
+            } else {
+                res.send("Nothing has been removed")
+              }
             
         } catch (error) {
             res.status(500).send("Server error")
