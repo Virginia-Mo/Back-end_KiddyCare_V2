@@ -5,8 +5,8 @@
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
-        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Blog<i class="fa-solid fa-caret-down pageMenu"></i></span>
+        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Articles</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
@@ -17,6 +17,11 @@
     <a href="/classes" class="joinclass__btn">Join Class</a>
     </div>
 </header>
+<% if (locals.message){%>
+    <div class="locals">
+        <p class="textLocals"><%=locals.message%></p>
+        </div>
+<%}%>
     <main class="maincontent">
         <section class="banner">
             <div class="banner__part1">
@@ -305,6 +310,9 @@
                             </article>
                         <%}%>
     </main>
+
+ 
+
     <footer class="footer">
         <div class="footer__container">
            <div class="footer__container-box footer__container-box--top">
@@ -352,9 +360,9 @@
          <div class="footer__container-box">
              <h2 class="footer__title">Newsletter</h2>
              <form method="POST" class="newsletterform">
-                 <input type="text" name="nameRequest" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter">
-                 <input type="email" name="emailRequest" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter">
-                 <button type="submit" class="button--blue requestNL">Submit Now</button>
+                 <input type="text" name="nameRequest" placeholder="Your Name" class="bookingform__input bookingform__input-newsletter" required>
+                 <input type="email" name="emailRequest" placeholder="Your Email" class="bookingform__input bookingform__input-newsletter" required>
+                 <button type="submit" class="button--blue requestNL btnSubmit">Submit Now</button>
              </form>
          </div>
     

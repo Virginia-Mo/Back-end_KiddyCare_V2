@@ -1,3 +1,4 @@
+const { localsName } = require('ejs');
 const {
     Message,
     Classbooking,
@@ -5,9 +6,10 @@ const {
 } = require('../models');
 
 const adminController = {
-    getMessage: async (req, res) => {
+    getMessage: async (req, res, next) => {
         try {
             const messageData = req.body;
+  
             const newMessage = await Message.create({
                 name: messageData.name,
                 email: messageData.email,
@@ -15,8 +17,9 @@ const adminController = {
                 message: messageData.contact__message,
                 user_id: 1,
             });
-            if (newMessage) {
-                res.redirect("/contact")
+            if (newMessage !== undefined) {
+                res.locals.messageContact = 'Thank you for your message, we\'ll reply to you as soon as possible !';
+                next();
             }
         } catch (error) {
             res.status(500).send("Server error")
@@ -33,8 +36,8 @@ const adminController = {
                     id: id
                 }
          })
-        if (removedMessage) {
-            res.redirect("/user")
+        if (removedMessage !== undefined) {
+            res.redirect("/admin/message")
           } else {
                 res.send("Nothing has been removed")
               }
@@ -55,9 +58,8 @@ const adminController = {
     },
 
     getBooking: async (req, res,next) => {
-        try {
+        try { 
             const bookingData = req.body;
-            console.log(bookingData)
 
             const newbooking = await Classbooking.create({
                 name: bookingData.name,
@@ -65,9 +67,9 @@ const adminController = {
                 class: bookingData.class,
                 user_id: 1,
             });
-            console.log(newbooking)
-            if (newbooking) {
-                next()
+            if (newbooking !== undefined) {
+            res.locals.messageBooking = 'Thank you for your subscription, we\'ll get back to you soon!';
+               next()
             }
         } catch (error) {
             res.status(500).send("Server error")
@@ -84,8 +86,8 @@ const adminController = {
                     id: id
                 }
             })
-            if (removedBooking) {
-                res.redirect("/user")
+            if (removedBooking !== undefined) {
+                res.redirect("/admin/classbooking")
             } else {
                 res.send("Nothing has been removed")
               }
@@ -107,19 +109,22 @@ const adminController = {
         }
     },
 
-    getNewsLetterRequest: async (req, res) => {
+    getNewsLetterRequest: async (req, res, next) => {
         try {
-
             const requestData = req.body;
+        if (!requestData.nameRequest || !requestData.emailRequest) {
+                return res.redirect("/")
+              }
             const newrequest = await NewsletterRequest.create({
                 name: requestData.nameRequest,
                 email: requestData.emailRequest,
                 user_id: 1,
             })
 
-            if (newrequest) {
-               res.redirect("/")
-            }
+         if (newrequest !== undefined){ 
+            res.locals.message = 'Thank you, you\'ll get our newsletter soon !';
+             next()}
+            
         } catch (error) {
             res.status(500).send("Server error")
         }
@@ -135,9 +140,8 @@ const adminController = {
                     id: id
                 }
             })
-            if (removedNewsletterRequest) {
-                const requests = await NewsletterRequest.findAll();
-                res.redirect("/user")
+            if (removedNewsletterRequest !== undefined) {
+                res.redirect("/admin/newsletter")
             } else {
                 res.send("Nothing has been removed")
               }
@@ -156,7 +160,7 @@ const adminController = {
         } catch (error) {
             res.status(500).send("Server error")
         }
-    },
+    }, 
 
 };
 module.exports = adminController;

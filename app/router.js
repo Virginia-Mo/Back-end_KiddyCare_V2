@@ -27,7 +27,7 @@ router.get("/copyrights", mainController.getCopyrightsPage);
 router.get("/about", mainController.aboutPage);
 
 router.get("/classes", mainController.classesPage);
-router.post("/classes", adminController.getBooking,mainController.classesPage);
+router.post("/classes", adminController.getBooking, mainController.classesPage);
 
 router.get("/teachers", mainController.teachersPage);
 
@@ -49,7 +49,7 @@ router.get("/user/removecomment/:id", checkedLogged, userController.removeCommen
 router.get("/tag/:id", mainController.showArticlebyTag);
 
 router.get("/contact", mainController.contactPage);
-router.post("/contact", adminController.getMessage);
+router.post("/contact", adminController.getMessage, mainController.contactPage);
 
 router.get("/login", loginController.login);
 router.post("/login", loginController.checkin);

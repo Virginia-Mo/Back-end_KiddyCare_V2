@@ -5,8 +5,8 @@
     <a href="/classes" class="blue-link">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
-        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Blog<i class="fa-solid fa-caret-down pageMenu"></i></span>
+        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Articles</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
@@ -17,7 +17,11 @@
     <a href="/classes" class="joinclass__btn">Join Class</a>
     </div>
 </header>
-
+<% if (locals.messageBooking){%>
+    <div class="locals">
+    <p class="textLocals"><%=locals.messageBooking%></p>
+    </div>
+<%}%>
 <main class="maincontent">
     <section class="banner banner__pages">
         <div class="banner__part1">
@@ -31,7 +35,7 @@
             <h2 class="content__title content__title--center">Classes for Your Kids</h2>
             <div class="classes__container">
             <article class="classescontent">
-                <img src="../img/class-1.jpg" alt="class1" class="classescontent__image">
+                <img src="img/class-1.jpg" alt="class1" class="classescontent__image">
                 <h3 class="classescontent__name">Drawing Class</h3>
                 <p class="classescontent__description">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
                     ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
@@ -128,19 +132,20 @@
             <div class="formcontainer ">
                 <h3 class="content__title content__subtitle--white">Book A Seat</h3>
                 <form action="" method="POST" class="bookingform" id="joinForm">
-                    <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input">
-                    <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input">
+                    <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input" required>
                     <select name="class" id="class" class="bookingform__input bookingform__input--select">
                         <option value="1">Drawing Class</option>
                         <option value="2">Language Class</option>
                         <option value="3">Basic Science</option>
                     </select>
-                    <button type="submit" class="bookingform__button">Book Now</button>
+                    <button type="submit" class="bookingform__button btnSubmit">Book Now</button>
                 </form>
             </div>
         </section>
     </div>
     </main>
+      
     <%-include ("partials/footer2")%>
 
    

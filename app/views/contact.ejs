@@ -5,8 +5,8 @@
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
-        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Blog<i class="fa-solid fa-caret-down pageMenu"></i></span>
+        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Articles</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
@@ -17,7 +17,11 @@
     <a href="/classes" class="joinclass__btn">Join Class</a>
     </div>
 </header>
-
+<% if (locals.messageContact){%>
+    <div class="locals">
+        <p class="textLocals"><%=locals.messageContact%></p>
+        </div>
+<%}%>
 <main class="maincontent">
     <section class="banner banner__pages">
         <div class="banner__part1">
@@ -34,11 +38,11 @@
            <div class="contact__container">
                <div class="contact__formcontainer contact__formcontainer--lastPage">
                 <form action="" method="POST" class="contact__bookingform ">
-                    <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input--contact">
-                    <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input--contact">
-                    <input type="text" name="subject" id="subject" placeholder="Subject" class="bookingform__input--contact">
-                    <textarea name="contact__message" id="contactmessage" cols="10" rows="10" placeholder="Message" class="bookingform__input--contact contact__message"></textarea>
-                    <button type="submit" class="contact__btn">Send Message</button>
+                    <input type="text" id="name" name="name" placeholder="Your Name" class="bookingform__input--contact" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" class="bookingform__input--contact" required>
+                    <input type="text" name="subject" id="subject" placeholder="Subject" class="bookingform__input--contact" required>
+                    <textarea name="contact__message" id="contactmessage" cols="10" rows="10" placeholder="Message" class="bookingform__input--contact contact__message" required></textarea>
+                    <button type="submit" class="contact__btn btnSubmit">Send Message</button>
                 </form>
             </div>
             <div class="contact__infos">
@@ -70,4 +74,14 @@
 
     </div>
     </main>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+              <p class="close">&times;</p>
+              <p>Thank you for your request, we'll get back to you soon !</p>
+            </div>
+          
+          </div>
 <%-include ("partials/footer2")%>

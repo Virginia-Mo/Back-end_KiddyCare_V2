@@ -9,7 +9,6 @@
         <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Articles</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
-    
     <a href="/contact" class="navbar__links">Contact</a>
 </nav>
 <div class="navContainer">
@@ -17,24 +16,9 @@
     <a href="/classes" class="joinclass__btn">Join Class</a>
     </div>
 </header>
+<main class="maincontent">
+    <div class="errorPage">
+    <img src="../img/cat.jpg" alt="" id="errorimg"></div>
 
-<h1 class="tagTitle"><%=tag.name%></h1>
-<% if (foundarticles.length == 0){%>
-    <p class="noArticle">No article found in this category</p>
-<%}else {%>
-     <div class="article__container">
-
-<% for (const article of foundarticles){ %>         
-    <article class="blogarticle">
-        <div class="article__text">
-       <div class="article__img"><img src="../uploads/<%=article.main_img%>" alt="blog1" class="blogarticle__image"></div> 
-        <h3 class="blogarticle__title"><%=article.maintitle%></h3>
-        <p class="blogarticle__description"><%=article.introduction%></p></div>
-        <a href="/blogdetails/<%=article.id%>" class="joinclass__btn joinclass__btn--center">Read More</a>
-    </article>
-<%}}%>
-   
-</div>
-
-    </main>
+</main>
 <%-include ("partials/footer2")%>

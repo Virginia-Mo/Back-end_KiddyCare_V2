@@ -1,6 +1,11 @@
 require("dotenv").config();
+var cookieParser = require("cookie-parser");
+var csrf = require("csurf");
+var bodyParser = require("body-parser");
 const express = require("express");
 const router = require("./app/router");
+const sanitize = require("./app/middleware/sanitizer");
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -18,11 +23,12 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false }
 }));
+app.use(sanitize);
 
 app.use(router);
 
 app.use(function(req,res) {
-  res.status(404).send("Cette page n'existe pas");
+  res.status(404).render("404");
 });
 
 app.listen(PORT,()=> {

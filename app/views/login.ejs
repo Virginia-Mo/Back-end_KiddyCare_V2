@@ -5,8 +5,8 @@
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="navbar__links" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
-        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Blog<i class="fa-solid fa-caret-down pageMenu"></i></span>
+        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Articles</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     
@@ -18,7 +18,7 @@
     </div>
 </header>
 <% if(typeof error !== 'undefined') { %>
-    <p><%= error %></p>
+    <p class="error"><%= error %></p>
   <% } %> 
 
 <h2 class="adminPage__maintitle">Welcome</h2>
@@ -33,3 +33,8 @@
     
     <button type="submit" class="loginButton">Log in</button>
 </form>
+<script src="../js/script.js" defer></script>
+<script src="../js/carousel.js" defer></script>
+</body>
+
+</html>

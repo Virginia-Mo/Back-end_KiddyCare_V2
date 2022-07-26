@@ -1,78 +1,89 @@
+// EFFETS SCROLL
+const sliders = document.querySelectorAll(".slide-in");
 
-document.addEventListener("DOMContentLoaded", () => {
+const appearOptions = {
+  threshold : 0,
+  rootMargin : "0px 0px -200px 0px",
+};
 
-  init();
-  function  init() {
-    menuJS();
-    handleGalleryPhotos();
-
-  }
-   
-  // Burger menu for mobile
-  function menuJS(){
-    toggle = document.querySelector(".toggle");
-    body = document.querySelector("body");
-
-    toggle.addEventListener("click", (e) => {
-      body.classList.toggle("openMenu");
-    });
-
-    blogMenuContainer = document.querySelector(".pageMenuContainer");
-    doubleLink = document.querySelectorAll(".doubleLInk");
-
-    blogMenuContainer.addEventListener("click", () =>{
-      body.classList.toggle("active");
-    });
-  };
-
-  // Gallery Photos    
-   
-  function handleGalleryPhotos(){
-    btnAll = document.querySelector("#all");
-    btnPlaying = document.querySelector("#playingbtn");
-    btnDrawing = document.querySelector("#drawingbtn");
-    btnReading = document.querySelector("#readingbtn");
-  
-    btnAll.addEventListener("click", () => {
-      show("allphotos");
-      hide("galleryphotos");hide("playing"); hide("drawing"); hide("reading");
-    }); 
-    
-    btnPlaying.addEventListener("click", () => {
-      show("playing");
-      hide("galleryphotos");hide("allphotos"); hide("drawing"); hide("reading");
-
-    });
-    
-    btnDrawing.addEventListener("click", () => {
-      show("drawing");
-      hide("galleryphotos");hide("allphotos"); hide("playing"); hide("reading");
-
-    });
-    
-    btnReading.addEventListener("click", () => {
-      show("reading");
-      hide("galleryphotos");hide("allphotos"); hide("playing"); hide("drawing");
-
-    });
-               
-  
-    function show(object) {
-      if (document.getElementById)
-        document.getElementById(object).style.display = "block";
-    };
-    function hide(object) {
-      if (document.getElementById)
-        document.getElementById(object).style.display = "none";
+const appearOnScroll = new IntersectionObserver( (entries, appearOnScroll) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.toggle("appear");
+      appearOnScroll.unobserve(entry.target);
     }
-    return;
-  };
-//
-  function confirmRequest(){
-    let btn = document.querySelector(".requestNL");
-    btn.addEventListener("click", (e) => {
-      e.preventDefault,
-      btn.textContent= " Thank you for the request, you successfully subscribed to our NewsLetter !";
-    })
-  };
+  });
+}, 
+appearOptions);
+
+sliders.forEach(slider => {
+  appearOnScroll.observe(slider);
 });
+   
+// Burger menu for mobile
+
+menuJS();
+    
+
+function menuJS(){
+  toggle = document.querySelector(".toggle");
+  body = document.querySelector("body");
+
+  toggle.addEventListener("click", (e) => {
+    body.classList.toggle("openMenu");
+  });
+
+  blogMenuContainer = document.querySelector(".pageMenuContainer");
+  doubleLink = document.querySelectorAll(".doubleLInk");
+
+  blogMenuContainer.addEventListener("click", () =>{
+    body.classList.toggle("active");
+  });
+};
+// Testimonial carousel
+
+carouselFunction();
+  
+function carouselFunction (){
+  let position = 0;
+    
+  let prev = document.getElementById("previous");
+  let next = document.getElementById("after");
+  let bodyT = document.querySelector("body");
+        
+  prev.addEventListener("click", () => {            
+    position = position - 1;
+    bodyT.classList.add("activeTest");
+    carousel(position);
+  });
+
+  next.addEventListener("click",  () => {
+    position = position + 1;
+    bodyT.classList.add("activeTest");
+    carousel(position);
+  });
+  
+  function carousel(review) {
+    const reviews = document.getElementsByClassName("parents");
+    
+    if (review >= reviews.length) {
+      review = 0;
+      position = 0;
+    }
+    if (review < 0) {
+      review = reviews.length - 1;
+      position = reviews.length - 1;
+    }
+    for ( let i = 0; i < reviews.length; i++) {
+      reviews[i].style.display = "none";
+    }
+    reviews[review].style.display = "block";
+  }    
+  carousel(position);
+  return;
+};
+
+
+

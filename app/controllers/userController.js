@@ -33,8 +33,8 @@ const userController = {
         tag_id: data.tag,
         user_id: req.session.user.id,
       });
-      if (article) {
-     res.redirect("/user")
+      if (article !== undefined) {
+     res.redirect("/user/articles")
     } 
     } catch (error) {
       res.status(500).send("Server error")
@@ -54,8 +54,8 @@ const userController = {
           id: id
         }
       })
-      if (removedArticle) {
-        res.redirect("/user")
+      if (removedArticle !== undefined) {
+        res.redirect("/user/articles")
       } else {
         res.send("Nothing has been removed")
       }
@@ -79,8 +79,8 @@ const userController = {
           id: id
         }
       })
-      if (removedComment) {
-       res.redirect("/user")
+      if (removedComment !== undefined) {
+       res.redirect("/user/comments")
       } else {
         res.send("Nothing has been removed")
       }

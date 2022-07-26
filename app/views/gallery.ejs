@@ -1,12 +1,38 @@
-<%-include ("partials/header")%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /><link rel="stylesheet" href="../css/reset.css" ><link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/about.css"><link rel="stylesheet" href="../css/classes.css"><link rel="stylesheet" href="../css/booking.css"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/media.css"><link rel="stylesheet" href="../css/gallery.css"><link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/gallery.js" defer ></script>
+    <title>KiddyCaring</title>
+</head>
+
+<body>
+    <header class="header">
+         <div class="logo"><img src="../img/people.png" alt="logo" class="logo__image"><span
+            class="logo__title"><a href="/">KiddyCare</a></span></div> 
+                <div class="toggle">
+                    <i class="fas fa-bars open"></i>
+                    <i class="fas fa-times close"></i>
+                </div>
+      
+
+                
 <nav class="navbar">
     <a href="/" class="navbar__links navbar__links--left ">Home</a>
     <a href="/about" class="navbar__links">About</a>
     <a href="/classes" class="navbar__links">Classes</a>
     <a href="/teachers" class="navbar__links">Teachers</a>
     <a href="/gallery" class="blue-link" id="galleryLink">Gallery</a>
-    <div class="pageMenuContainer navbar__links"><span class="pagespan">Pages <i class="fa-solid fa-caret-down pageMenu"></i></span>
-        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Our Blog</a>
+    <div class="pageMenuContainer navbar__links"><span class="pagespan">Blog<i class="fa-solid fa-caret-down pageMenu"></i></span>
+        <div class="linkcontainer"><a href="/pages" class="navbar__links doubleLink">Articles</a>
         <a href="/blogdetails" class="navbar__links doubleLink">Last Article</a></div>
     </div>
     <a href="/contact" class="navbar__links">Contact</a>
