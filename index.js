@@ -31,6 +31,6 @@ app.use(function(req,res) {
   res.status(404).render("404");
 });
 
-app.listen(PORT,()=> {
+app.listen(3000,()=> {
   console.log(`Server listening on http://localhost:${PORT}`);
 });

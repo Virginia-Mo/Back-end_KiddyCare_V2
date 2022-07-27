@@ -73,4 +73,8 @@ CREATE TABLE IF NOT EXISTS "comment" (
     "updated_at" timestamptz
 );
 
+
+INSERT INTO "tag" ("name") VALUES('Arts at school'),('Sports'),('Events'),('Homework Methodology');
+INSERT INTO "user" ("name", "email","password") VALUES ('adminKDC','admin@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO'),('teacherKDC','teacher@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO');
+
 COMMIT;
