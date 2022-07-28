@@ -1,4 +1,4 @@
-const { Article, Tag, Comment } = require("../models");
+const { Tag, Article, Comment } = require("../models");
 const { Op } = require('sequelize');
 
 const mainController = {

@@ -38,6 +38,14 @@ Classbooking.belongsTo(User,{
   as :"user",
   foreignKey : "user_id",
 });
+Article.hasMany(Comment,{
+  as :"comments",
+  foreignKey : "article_id",
+});
+Comment.belongsTo(Article,{
+  as :"article",
+  foreignKey : "article_id",
+});
 Tag.hasMany(Article, {
   as : "article",
   foreignKey : "tag_id",
@@ -47,14 +55,6 @@ Article.belongsTo(Tag, {
   as : "tag",
   foreignKey : "tag_id",
 });
-Article.hasMany(Comment,{
-  as :"comments",
-  foreignKey : "article_id",
-});
-Comment.belongsTo(Article,{
-  as :"article",
-  foreignKey : "article_id",
-});
-module.exports = { User, Article, Classbooking, Message, NewsletterRequest, Tag, Comment };
+module.exports = { User, NewsletterRequest, Message, Classbooking, Tag, Article, Comment};
 
 

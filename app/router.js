@@ -12,10 +12,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const mainController = require("./controllers/mainController");
+const adminController = require("./controllers/adminController");
+const checkedLogged = require("./middleware/checkLogged");
 const loginController = require("./controllers/loginController");
 const userController = require("./controllers/userController");
-const checkedLogged = require("./middleware/checkLogged");
-const adminController = require("./controllers/adminController");
 
 const router = express.Router();
 

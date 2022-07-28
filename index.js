@@ -1,7 +1,4 @@
 require("dotenv").config();
-var cookieParser = require("cookie-parser");
-var csrf = require("csurf");
-var bodyParser = require("body-parser");
 const express = require("express");
 const router = require("./app/router");
 const sanitize = require("./app/middleware/sanitizer");
@@ -32,5 +29,5 @@ app.use(function(req,res) {
 });
 
 app.listen(process.env.PORT,()=> {
-  console.log("Server listening on http://localhost:3000");
+  console.log("Server ok");
 });
