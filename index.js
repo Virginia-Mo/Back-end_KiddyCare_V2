@@ -28,6 +28,6 @@ app.use(function(req,res) {
   res.status(404).render("404");
 });
 
-app.listen(process.env.PORT,()=> {
+app.listen(PORT,()=> {
   console.log("Server ok");
 });
