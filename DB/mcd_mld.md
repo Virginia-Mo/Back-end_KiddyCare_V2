@@ -111,18 +111,18 @@
   - "article_id" INTEGER NOT NULL REFERENCES "article"("id"),  
 )
 - "testimonial" (
-    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "img" TEXT,
-    "name" TEXT NOT NULL,
-    "message" TEXT NOT NULL,
-    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" timestamptz
+  - "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  - "img" TEXT,
+  - "name" TEXT NOT NULL,
+  - "message" TEXT NOT NULL,
+  - "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  - "updated_at" timestamptz
 );
 - "gallery" (
-    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "name" TEXT,
-    "img" TEXT NOT NULL,
-    "category" TEXT NOT NULL,
-    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" timestamptz
+  - "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  - "name" TEXT,
+  - "img" TEXT NOT NULL,
+  - "category" TEXT NOT NULL,
+  - "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  - "updated_at" timestamptz
 );
