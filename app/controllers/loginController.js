@@ -16,7 +16,7 @@ const userController = {
             
         } else if (req.body.password == '') {
             error = "Password required"
-            res.render("login", {
+            res.json({
                 error: error,
             })
             
@@ -28,7 +28,7 @@ const userController = {
          
         if (!user) {
                 error = "Wrong password or email"
-                res.render("login", {
+                res.json({
                     error: error,
                 })
                 return
@@ -43,7 +43,7 @@ const userController = {
                 req.session.user = user;
                 delete req.session.password;
                 console.log(req.session.user)
-                res.redirect("/user")
+                res.json("Logged")
         } else {
              res.render("login", {
                     error: error,
@@ -64,7 +64,7 @@ const userController = {
           limit : 3, 
           order : [['createdAt', 'DESC']], 
           });
-        res.render("home", {articles});
+        res.json({articles});
       },
 }
 

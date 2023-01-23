@@ -1,12 +1,33 @@
 BEGIN;
 
-DROP TABLE IF EXISTS "user", "newsletterRequest","message","classbooking","article","tag";
+DROP TABLE IF EXISTS "user","teacher","classes","newsletterRequest","message","classbooking","tag","article","comment","testimonial", "gallery" CASCADE;
 
 CREATE TABLE IF NOT EXISTS "user" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT,
     "email" TEXT NOT NULL UNIQUE,
     "password" TEXT NOT NULL,
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
+);
+CREATE TABLE IF NOT EXISTS "classes" (
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "img" TEXT,
+    "name" TEXT NOT NULL,
+    "short_description" TEXT,
+    "age" TEXT NOT NULL,
+    "seats" INTEGER NOT NULL,
+    "hours" TEXT NOT NULL,
+    "price" INTEGER NOT NULL,
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
+);
+CREATE TABLE IF NOT EXISTS "teacher" (
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "img" TEXT,
+    "name" TEXT NOT NULL,
+    "job" TEXT NOT NULL,
+    "classes_id" INTEGER NOT NULL REFERENCES "classes"("id"),
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
@@ -43,7 +64,6 @@ CREATE TABLE IF NOT EXISTS "tag" (
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
-
 CREATE TABLE IF NOT EXISTS "article" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "maintitle" TEXT NOT NULL,
@@ -72,9 +92,20 @@ CREATE TABLE IF NOT EXISTS "comment" (
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
-
-
-INSERT INTO "tag" ("name") VALUES('Arts at school'),('Sports'),('Events'),('Homework Methodology');
-INSERT INTO "user" ("name", "email","password") VALUES ('adminKDC','admin@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO'),('teacherKDC','teacher@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO');
-
+CREATE TABLE IF NOT EXISTS "testimonial" (
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "img" TEXT,
+    "name" TEXT NOT NULL,
+    "message" TEXT NOT NULL,
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
+);
+CREATE TABLE IF NOT EXISTS "gallery" (
+    "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT,
+    "img" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" timestamptz
+);
 COMMIT;

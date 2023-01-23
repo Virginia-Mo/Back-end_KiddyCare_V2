@@ -9,7 +9,7 @@ const userController = {
   },
   showArticles: async (req, res) => {
     const articles = await Article.findAll()
-    res.render("user/articles", {
+    res.json({
       articles
     })
   },
@@ -34,7 +34,7 @@ const userController = {
         user_id: req.session.user.id,
       });
       if (article !== undefined) {
-     res.redirect("/user/articles")
+     res.json("Article created")
     } 
     } catch (error) {
       res.status(500).send("Server error")
@@ -66,7 +66,7 @@ const userController = {
   },
   getCommentsPage : async (req,res) => {
     const comments = await Comment.findAll();
-    res.render("user/comments", {comments})
+    res.json(comments)
   },
   removeComment: async (req, res) => {
     const id = +req.params.id;
@@ -80,7 +80,7 @@ const userController = {
         }
       })
       if (removedComment !== undefined) {
-       res.redirect("/user/comments")
+       res.json("Comment removed")
       } else {
         res.send("Nothing has been removed")
       }

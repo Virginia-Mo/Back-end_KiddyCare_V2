@@ -5,6 +5,10 @@ const NewsletterRequest = require("./newsletterRequest");
 const Classbooking = require("./classbooking");
 const Tag = require("./tag");
 const Comment = require("./comment");
+const Teacher = require("./teacher")
+const Classes = require("./classes")
+const Testimonial = require("./testimonial")
+const Gallery = require("./gallery")
 
 User.hasMany(Article,{
   as :"article",
@@ -49,12 +53,26 @@ Comment.belongsTo(Article,{
 Tag.hasMany(Article, {
   as : "article",
   foreignKey : "tag_id",
-
 });
 Article.belongsTo(Tag, {
   as : "tag",
   foreignKey : "tag_id",
 });
-module.exports = { User, NewsletterRequest, Message, Classbooking, Tag, Article, Comment};
+// Classes.hasOne(Teacher, {
+//   as : "teacher",
+// });
+Teacher.belongsTo(Classes, {
+  as: "classes",
+  foreignKey : "classes_id",
+})
+// Testimonial.belongsTo(User, {
+//   as : "user",
+//   foreignKey : "user_id"
+// })
+// User.hasOne(Testimonial, {
+//   as : "testimonial",
+//   foreignKey : "testimonial_id"
+// })
+module.exports = { Teacher, User, NewsletterRequest, Message, Classbooking, Tag, Article, Comment, Classes, Testimonial, Gallery};
 
 

@@ -18,7 +18,7 @@ const adminController = {
                 user_id: 1,
             });
             if (newMessage !== undefined) {
-                res.locals.messageContact = 'Thank you for your message, we\'ll reply to you as soon as possible !';
+                res.json('Thank you for your message, we\'ll reply to you as soon as possible !');
                 next();
             }
         } catch (error) {
@@ -48,7 +48,7 @@ const adminController = {
     getMessagePage: async (req, res) => {
         try {
             const messages = await Message.findAll();
-            res.render("user/message", {
+            res.json({
                 messages
             })
 
@@ -68,7 +68,7 @@ const adminController = {
                 user_id: 1,
             });
             if (newbooking !== undefined) {
-            res.locals.messageBooking = 'Thank you for your subscription, we\'ll get back to you soon!';
+            res.json('Thank you for your subscription, we\'ll get back to you soon!');
                next()
             }
         } catch (error) {
@@ -87,7 +87,7 @@ const adminController = {
                 }
             })
             if (removedBooking !== undefined) {
-                res.redirect("/admin/classbooking")
+                res.json("The booking has been removed")
             } else {
                 res.send("Nothing has been removed")
               }
@@ -100,7 +100,7 @@ const adminController = {
         try {
             const bookings = await Classbooking.findAll();
 
-            res.render("user/booking", {
+            res.json({
                 bookings
             })
 
@@ -113,7 +113,8 @@ const adminController = {
         try {
             const requestData = req.body;
         if (!requestData.nameRequest || !requestData.emailRequest) {
-                return res.redirect("/")
+               res.json("Try again") 
+               return 
               }
             const newrequest = await NewsletterRequest.create({
                 name: requestData.nameRequest,
@@ -122,7 +123,7 @@ const adminController = {
             })
 
          if (newrequest !== undefined){ 
-            res.locals.message = 'Thank you, you\'ll get our newsletter soon !';
+            res.json('Thank you, you\'ll get our newsletter soon !');
              next()}
             
         } catch (error) {
@@ -132,7 +133,7 @@ const adminController = {
     removeNewsletterRequest: async (req, res) => {
       const id = +req.params.id;
       if (isNaN(id)) {
-        return res.send("Invalid list id")
+        return res.json("Invalid list id")
       }
         try {
             const removedNewsletterRequest = await NewsletterRequest.destroy({
@@ -141,7 +142,7 @@ const adminController = {
                 }
             })
             if (removedNewsletterRequest !== undefined) {
-                res.redirect("/admin/newsletter")
+                res.json("Successfully removed")
             } else {
                 res.send("Nothing has been removed")
               }
@@ -153,7 +154,7 @@ const adminController = {
     getNewsletterRequestPage: async (req, res) => {
         try {
             const requests = await NewsletterRequest.findAll();
-            res.render("user/newsletter", {
+            res.json({
                 requests
             })
 

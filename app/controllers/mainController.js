@@ -1,4 +1,4 @@
-const { Tag, Article, Comment } = require("../models");
+const { Tag,Teacher, Article, Comment, Classes, Testimonial, Gallery} = require("../models");
 const { Op } = require('sequelize');
 
 const mainController = {
@@ -8,24 +8,35 @@ const mainController = {
         limit : 3, 
         order : [['createdAt', 'DESC']], 
         });
-      res.render("home", {articles});
+      res.json({articles});
     },
     aboutPage(req,res) {
       res.render("about");
     },
-    classesPage(req,res) {
-      res.render("classes");
+    getTags: async(req,res) => {
+      const tag = await Tag.findAll();
+      res.json(tag)
     },
-    teachersPage(req,res) {
-      res.render("teachers");
+    getTestimonial: async(req,res) => {
+      const testimonial = await Testimonial.findAll();
+      res.json(testimonial)
     },
-    galleryPage(req,res) {
-      res.render("gallery");
+    getGallery: async(req,res) => {
+      const gallery = await Gallery.findAll();
+      res.json(gallery)
+    },
+    classesPage: async(req,res) => {
+      const classes = await Classes.findAll();
+      res.json(classes)
+    },
+    teachersPage: async(req,res) => {
+      const teacher = await Teacher.findAll();
+      res.json(teacher);
     },
     pagesPage : async(req,res) => {
       try {
-      const articles = await Article.findAll({include : ["tag","comments"], order : [['createdAt', 'DESC']]});
-      res.render("pages", {articles});
+      const articles = await Article.findAll({include : ["tag","comments"], order : [['id', 'DESC']]});
+      res.json(articles);
     } catch (error) {
       res.status(500).send("Server Error")
     }
@@ -42,7 +53,7 @@ const mainController = {
         });
       const comments = await Comment.findAll({where :{ article_id : newArticle.id}});
 
-      res.render("blogDetails", {newArticle, tags, articles, comments});
+      res.json(newArticle, tags, articles, comments);
     } catch (error) {
       res.status(500).send("Server Error")
     }
@@ -71,7 +82,6 @@ const mainController = {
         return res.send("Invalid list id")
       }
       try {
-    
       const tags = await Tag.findAll({include : "article"})
       const articles = await Article.findAll({
         limit : 3, 
@@ -81,7 +91,8 @@ const mainController = {
       const foundArticle = await Article.findByPk(articleid, {include : "tag"});
       const comments = await Comment.findAll({where :{ article_id : articleid}})
 
-      res.render("searchedArticle", {foundArticle, comments, articles, tags}) 
+      res.json(foundArticle, comments, articles, tags) 
+
     } catch (error){
       res.status(500).send("Server Error")
     }
@@ -95,7 +106,7 @@ const mainController = {
       const foundarticles = await Article.findAll({where: { tag_id : tagId}});
       const tag = await Tag.findByPk(tagId);
 
-      res.render("tags", {foundarticles, tag})
+      res.json({foundarticles, tag})
 
     } catch (error){
       res.status(500).send("Server Error")

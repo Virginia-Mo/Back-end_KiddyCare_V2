@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const router = require("./app/router");
 const sanitize = require("./app/middleware/sanitizer");
+const cors = require("./app/middleware/cors");
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +14,7 @@ app.set("views", "./app/views");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors);
 app.use(session({
   secret: process.env.SECRET,
   resave: true,
@@ -28,6 +29,7 @@ app.use(function(req,res) {
   res.status(404).render("404");
 });
 
+
 app.listen(PORT,()=> {
-  console.log("Server ok");
+  console.log(`Server ok at http://localhost:${PORT}`);
 });
