@@ -118,7 +118,7 @@
     "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamptz
 );
-"gallery" (
+- "gallery" (
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT,
     "img" TEXT NOT NULL,
