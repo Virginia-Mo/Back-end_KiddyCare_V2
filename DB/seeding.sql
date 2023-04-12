@@ -8,10 +8,10 @@ VALUES
     ('Sports'),
     ('Events'),
     ('Homework Methodology');
-INSERT INTO "user" ("name", "email","password") 
+INSERT INTO "user" ("name", "email","password","role") 
 VALUES 
-    ('adminKDC','admin@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO'),
-    ('teacherKDC','teacher@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO');
+    ('adminKDC','admin@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO','admin'),
+    ('teacherKDC','teacher@kdc.io','$2a$10$hwfB2c5lgT6u/WSXfgdsT.uTFdxSrfjwMkeTpvxWwZndD/HpxwGGO', 'teacher');
 
 INSERT INTO "classes" ("img","name","short_description","age","seats","hours","price")
 VALUES
@@ -92,7 +92,7 @@ VALUES
     ('Luna Lovehart', 'luna@hp.com', 'Wow this painting looks amazing, the kids did a good job !', 6),
     ('Molly Red', 'weasl@hp.com', 'All the kids had a blast during the party, it was awesome, see you after summer ! ', 6),
     ('Dory Fish', 'fish@do.com', 'Just keep swimming, just keep swimming :D', 7),
-        ('TEST', 'TEST', 'Just keep swimming, just keep swimming :D', 7);
+    ('TEST', 'TEST', 'Just keep swimming, just keep swimming :D', 7);
 INSERT INTO "testimonial" ("img","name","message")
 VALUES 
     ('https://res.cloudinary.com/dps629xiv/image/upload/v1674082801/kdc/testimonial-3_y9oorh.jpg', 'Luke Wars', 'Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum clita'),

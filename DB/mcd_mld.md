@@ -4,7 +4,7 @@
 - NEWSLETTER : code, name, email
 - MESSAGE : code, name, email, subject, message
 - READ, 0N USER, 11 MESSAGE
-- USER : code, name, email, password
+- USER : code, name, email, password, role
 - CHECK, 0N USER, 11 CLASSBOOKING
 - CLASSBOOKING : code, name, email, class
 - WRITE, 0N USER, 11 ARTICLE
@@ -27,7 +27,7 @@
 - CLASSBOOKING (_id_, name, email, class, #User_id)
 - NEWSLETTER (_id_, name, email, #User_id)
 - ARTICLE (_id_, mainImg, introduction, title1, img1, description1, title2, img2, description2, author_img, authorname, authorjob, .Tag, #User_id)
-- USER (_id_, name, email, password)
+- USER (_id_, name, email, password, role)
 - TAG (_id_, name)
 - MESSAGE (_id_, name, email, subject, message, #User_id)
 - CLASSES (_id_, img, name, short_description, age, seats, hours,price)
@@ -41,7 +41,8 @@
   - "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,  
   - "name" TEXT,  
   - "email" TEXT NOT NULL UNIQUE,  
-  - "password" TEXT NOT NULL,  
+  - "password" TEXT NOT NULL,
+  - "role" TEXT NOT NULL,  
 )
 - "classes"(
     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

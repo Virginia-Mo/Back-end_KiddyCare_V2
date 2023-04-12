@@ -1,10 +1,11 @@
-const checkedLogged = (req,res,next) => {
-    if (!req.session.user) {
-        res.redirect("/login");
-        return;
-    } 
-    res.locals.user = req.session.user;
-    next();
+const checkedLogged = (req,res,next) => { 
+  const role = req.headers["role"]
+  console.log("ROLE" + role)
+if (role === "admin" || role === "teacher"){
+  next();
+} else {
+  console.log("NOPE")
+}
 }
 
 module.exports = checkedLogged;
