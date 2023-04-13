@@ -34,7 +34,7 @@ const userController = {
             // req.session.user.password.destroy();
             // console.log(`SESSION :  ${req.session.user}, USER :  ${user}`)
             req.session.user = user; 
-            res.json({role : req.session.user.role, id:user.id})
+            res.json({role : user.role, id:user.id})
             
         } else {
              res.json(error)

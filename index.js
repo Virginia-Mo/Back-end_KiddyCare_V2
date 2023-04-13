@@ -9,9 +9,6 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const session = require("express-session");
 
-app.set("view engine", "ejs");
-app.set("views", "./app/views");
-
 app.use(cors());
 app.use(sanitize);
 app.use(bodyParser.json())
@@ -33,5 +30,5 @@ app.use(function(req,res) {
 });
 
 app.listen(PORT,()=> {
-  console.log(`Server ok at http://localhost:${PORT}`);
+  console.log(`Server ok`);
 });
