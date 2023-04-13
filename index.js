@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-  secret: "HiThere",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
   cookie : {secure : false}
